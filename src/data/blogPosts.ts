@@ -10,6 +10,97 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "monthly-website-vs-once-off-build-south-africa",
+    title: "Why a Monthly Website Plan Beats a R20,000 Once-Off Build in South Africa",
+    description:
+      "Once-off websites are dead. Here's why South African businesses are switching to monthly website plans — and saving thousands while getting better service.",
+    date: "2025-02-12",
+    readTime: "6 min read",
+    category: "Pricing",
+    content: `
+<p>You've probably been quoted R15,000 to R30,000 for a website by a "traditional" web designer. Then they disappear. Two months later your site breaks, nobody answers your emails, and you're stuck. Sound familiar?</p>
+
+<p>That's why <strong>monthly website plans</strong> are taking over the South African market — and why we built Lunexweb around this model.</p>
+
+<h2>The problem with once-off website builds</h2>
+<ul>
+  <li><strong>Massive upfront cost:</strong> R15,000 – R30,000 is real money for a small business</li>
+  <li><strong>No ongoing support:</strong> The designer takes the money and vanishes</li>
+  <li><strong>Hidden costs:</strong> Hosting, domain, SSL, plugins, security — all extra</li>
+  <li><strong>Site breaks within 12 months:</strong> Plugins go out of date, hackers attack, nothing gets fixed</li>
+  <li><strong>You're stuck:</strong> Need a small change? Pay R500 per hour</li>
+</ul>
+
+<h2>How a monthly website plan works</h2>
+<p>With Lunexweb, you pay a small once-off setup fee (from R499) and then a fixed monthly amount (from R299/month). For that you get:</p>
+<ul>
+  <li>Professional website built specifically for your business</li>
+  <li>Hosting, domain, SSL, security — all included</li>
+  <li>Ongoing updates and maintenance forever</li>
+  <li>Content changes whenever you need them</li>
+  <li>Speed and uptime monitoring</li>
+  <li>Fast WhatsApp support — no email tickets</li>
+</ul>
+
+<h2>The 5-year cost comparison</h2>
+<p><strong>Traditional once-off (5 years):</strong> R20,000 build + R500/month hosting + R3,000 maintenance/year + R5,000 redesign in year 3 = <strong>~R58,000</strong></p>
+<p><strong>Lunexweb monthly (5 years):</strong> R499 setup + R299 × 60 months = <strong>R18,439</strong></p>
+<p>You save over <strong>R39,000</strong> — and you get continuous improvement, not a stale 5-year-old site.</p>
+
+<h2>Why this works for SA small businesses</h2>
+<p>South African small businesses can't afford to drop R25,000 on a website. But R299/month is the cost of two coffee meetings. Cash flow stays healthy, and you always have someone managing your online presence.</p>
+
+<h2>The bottom line</h2>
+<p>If you want a website that <em>actually works</em> 5 years from now, monthly is the only sensible option. <a href="https://wa.me/27789992503">Chat with us on WhatsApp</a> and we'll match you with the right monthly package.</p>
+`,
+  },
+  {
+    slug: "whats-included-in-monthly-website-plan",
+    title: "What's Included in Lunexweb's Monthly Website Plan? (Full Breakdown)",
+    description:
+      "Wondering what you actually get for R299/month? Here's the complete list of what's included in Lunexweb's website plans for South African businesses.",
+    date: "2025-02-19",
+    readTime: "5 min read",
+    category: "Pricing",
+    content: `
+<p>"What do I actually get for R299 a month?" — fair question. Most agencies are vague about what's included. We're not. Here's the full list.</p>
+
+<h2>1. Your website, fully built and live</h2>
+<p>We design and build your custom website. No templates that look like everyone else. Multi-page, mobile-first, fast loading, on a real domain (yourbusiness.co.za).</p>
+
+<h2>2. Hosting, domain & SSL — included</h2>
+<p>You'd normally pay R150–R300/month for hosting alone. With us it's bundled. Plus we secure your site with SSL (the padlock icon) so customers trust you.</p>
+
+<h2>3. Unlimited content updates</h2>
+<p>Need to change your prices? Add a new service? Update photos? Just WhatsApp us. We handle it. No "support ticket" nonsense.</p>
+
+<h2>4. Speed & uptime monitoring</h2>
+<p>Your site is monitored 24/7. If anything goes wrong, we know before you do.</p>
+
+<h2>5. Security & backups</h2>
+<p>Daily backups. Security patches. Malware scanning. If your site ever gets hit, we restore it. No extra charge.</p>
+
+<h2>6. SEO basics</h2>
+<p>Proper page titles, meta descriptions, sitemap, schema markup, fast loading — all the technical SEO foundations Google needs to rank you.</p>
+
+<h2>7. Google Business Profile setup</h2>
+<p>We set up and optimize your Google Business profile so you show up on Google Maps and the local pack.</p>
+
+<h2>8. WhatsApp support — direct line to your designer</h2>
+<p>You don't email a help desk. You message us directly on WhatsApp. Most issues solved within an hour.</p>
+
+<h2>What's NOT included (be honest)</h2>
+<ul>
+  <li>Paid Google Ads spend (we can manage them, but the ad budget is separate)</li>
+  <li>Custom illustrations or stock photo licenses (we use free options)</li>
+  <li>Complex e-commerce — that's a different package</li>
+</ul>
+
+<h2>Compare that to what most agencies offer</h2>
+<p>Most agencies disappear after building. We're with you every month, forever. <a href="https://wa.me/27789992503">WhatsApp us</a> and we'll show you exactly what your package would include.</p>
+`,
+  },
+  {
     slug: "why-every-sa-business-needs-a-website",
     title: "Why Every South African Business Needs a Website in 2025",
     description:
@@ -103,6 +194,206 @@ export const blogPosts: BlogPost[] = [
 <p>We build websites <em>specifically</em> designed to convert paid ad traffic — fast loading, mobile-first, with clear conversion paths. If you want to start running ads, message us and we'll make sure your site is ready.</p>
 
 <p><a href="https://wa.me/27789992503">Chat on WhatsApp →</a></p>
+`,
+  },
+  {
+    slug: "web-design-johannesburg",
+    title: "Web Design Johannesburg: Affordable Monthly Website Plans for Joburg Businesses",
+    description:
+      "Looking for a web designer in Johannesburg? Lunexweb is a Joburg-based agency offering monthly website plans from R299 — no big upfront fees.",
+    date: "2025-02-26",
+    readTime: "5 min read",
+    category: "Local",
+    content: `
+<p>If you run a business in Johannesburg, having a website isn't optional anymore — it's how customers find you, decide to trust you, and contact you. The challenge? Most Joburg web designers want R20,000+ upfront, then disappear.</p>
+
+<p>That's why we started <strong>Lunexweb</strong> — a Johannesburg-based agency offering professional websites on a monthly plan, so you don't drain your cash flow.</p>
+
+<h2>Why Johannesburg businesses choose Lunexweb</h2>
+<ul>
+  <li><strong>We're local:</strong> Based in Joburg, we understand the SA market and your customers</li>
+  <li><strong>No huge upfront cost:</strong> Setup from R499, then R299/month</li>
+  <li><strong>We manage it forever:</strong> Updates, security, hosting — all included</li>
+  <li><strong>WhatsApp support:</strong> Real human reply, usually within an hour</li>
+  <li><strong>Built for Google:</strong> Optimized for "near me" Joburg searches</li>
+</ul>
+
+<h2>Areas we serve in Johannesburg</h2>
+<p>Sandton, Rosebank, Randburg, Fourways, Midrand, Soweto, Roodepoort, Bryanston, Centurion, Edenvale, Kempton Park — anywhere in greater Johannesburg.</p>
+
+<h2>Industries we've built websites for in Joburg</h2>
+<ul>
+  <li>Restaurants and cafés</li>
+  <li>Plumbers, electricians, handymen</li>
+  <li>Beauty salons and spas</li>
+  <li>Lawyers and accountants</li>
+  <li>Mechanics and panel beaters</li>
+  <li>Personal trainers and gyms</li>
+</ul>
+
+<h2>How it works</h2>
+<ol>
+  <li>You WhatsApp us with details about your business</li>
+  <li>We recommend the right monthly package</li>
+  <li>Pay R499 setup fee — we start building</li>
+  <li>Site goes live in 5–7 days</li>
+  <li>You pay R299/month — we manage everything forever</li>
+</ol>
+
+<p><strong>Get a free quote:</strong> <a href="https://wa.me/27789992503">Chat on WhatsApp</a> with a Johannesburg-based designer right now.</p>
+`,
+  },
+  {
+    slug: "web-design-cape-town",
+    title: "Web Design Cape Town: Monthly Website Plans for SA's Most Competitive Market",
+    description:
+      "Cape Town businesses need websites that compete with international standards. Lunexweb offers professional monthly website plans for Cape Town from R299/month.",
+    date: "2025-03-05",
+    readTime: "5 min read",
+    category: "Local",
+    content: `
+<p>Cape Town has one of the most competitive markets in South Africa. Tourism, hospitality, tech startups, professional services — everyone is online and the bar is high. If your website looks like it was built in 2015, you're losing customers to your competition.</p>
+
+<h2>Why Cape Town businesses need monthly website plans</h2>
+<p>Cape Town customers — especially in tourism and hospitality — expect international-quality websites. They book on mobile, they check reviews, they compare instantly. A neglected website kills conversions overnight.</p>
+
+<p>With a <strong>Lunexweb monthly plan</strong>, your site stays competitive forever. We update content, refresh design, monitor speed, and keep you ahead of competitors who built once and forgot.</p>
+
+<h2>Industries we serve in Cape Town</h2>
+<ul>
+  <li><strong>Tourism & accommodation:</strong> Guesthouses, B&Bs, tour operators</li>
+  <li><strong>Hospitality:</strong> Restaurants, cafés, wine farms</li>
+  <li><strong>Professional services:</strong> Lawyers, accountants, consultants</li>
+  <li><strong>Trades:</strong> Builders, electricians, plumbers across CT</li>
+  <li><strong>Beauty & wellness:</strong> Salons, spas, therapists</li>
+</ul>
+
+<h2>Cape Town areas we cover</h2>
+<p>City Bowl, Sea Point, Camps Bay, Constantia, Claremont, Newlands, Southern Suburbs, Northern Suburbs (Bellville, Durbanville, Tygervalley), Stellenbosch, Somerset West, Atlantic Seaboard, and beyond.</p>
+
+<h2>Pricing for Cape Town businesses</h2>
+<ul>
+  <li><strong>Setup:</strong> From R499 once-off</li>
+  <li><strong>Monthly:</strong> From R299/month</li>
+  <li><strong>Includes:</strong> Hosting, domain, SSL, maintenance, content updates, SEO basics, Google Business setup</li>
+</ul>
+
+<p><a href="https://wa.me/27789992503">WhatsApp us</a> with your business details — we'll send you a Cape Town-specific quote within an hour.</p>
+`,
+  },
+  {
+    slug: "web-design-pretoria",
+    title: "Affordable Web Design Pretoria: Monthly Website Plans from R299/Month",
+    description:
+      "Pretoria business owners — get a professional website without the R20,000 upfront fee. Lunexweb's monthly website plans cover everything from build to maintenance.",
+    date: "2025-03-12",
+    readTime: "4 min read",
+    category: "Local",
+    content: `
+<p>Pretoria is full of small businesses, professional services, and government suppliers — all of whom need a credible online presence. The problem? Most Pretoria web designers either charge too much or deliver outdated WordPress templates.</p>
+
+<h2>The Lunexweb difference for Pretoria businesses</h2>
+<p>We're a South African agency offering <strong>monthly website plans</strong> built for businesses in Pretoria, Centurion, Hatfield, Brooklyn, Menlyn and surrounding areas.</p>
+
+<ul>
+  <li>R499 once-off setup</li>
+  <li>R299/month for the website + everything that keeps it running</li>
+  <li>Built in 5–7 days</li>
+  <li>Optimized for "near me" Google searches in Pretoria</li>
+  <li>WhatsApp support, no email tickets</li>
+</ul>
+
+<h2>Pretoria industries we work with</h2>
+<ul>
+  <li>Attorneys, accountants, consultants</li>
+  <li>Tradespeople (plumbers, electricians, builders)</li>
+  <li>Restaurants and cafés</li>
+  <li>Tutoring & education businesses</li>
+  <li>Medical practices and dentists</li>
+  <li>Beauty salons, spas and barbers</li>
+</ul>
+
+<h2>What you get every month</h2>
+<p>Hosting, domain, SSL, daily backups, security monitoring, content updates, speed checks, SEO maintenance, and Google Business profile management — all wrapped into one R299 monthly fee.</p>
+
+<p><strong>Ready for a quote?</strong> <a href="https://wa.me/27789992503">Chat on WhatsApp</a> — we usually reply within 30 minutes during business hours.</p>
+`,
+  },
+  {
+    slug: "websites-for-plumbers-south-africa",
+    title: "Websites for Plumbers in South Africa: Get More Calls With a Monthly Plan",
+    description:
+      "Plumbers in South Africa lose jobs every day to competitors with better websites. Here's how a R299/month Lunexweb plan can fill your calendar.",
+    date: "2025-03-19",
+    readTime: "5 min read",
+    category: "Industry",
+    content: `
+<p>If you're a plumber in South Africa, your customers are not finding you in the Yellow Pages anymore. They're searching <em>"plumber near me"</em>, <em>"emergency plumber Johannesburg"</em>, or <em>"geyser repair Cape Town"</em> — and the plumber with the best website wins the call.</p>
+
+<h2>Why plumbers need a monthly website plan</h2>
+<p>Most plumbers either have no website or one their cousin built in 2018 that doesn't work on mobile. Both are killing your business. With a Lunexweb monthly plan you get:</p>
+
+<ul>
+  <li>A mobile-friendly website with click-to-call buttons</li>
+  <li>WhatsApp button on every page (most plumbing leads come via WhatsApp)</li>
+  <li>Service pages: blocked drains, geyser repair, leak detection, installations</li>
+  <li>Gallery showing your work</li>
+  <li>Reviews from happy customers</li>
+  <li>"Areas served" section so you rank in local search</li>
+</ul>
+
+<h2>Why monthly works for plumbers</h2>
+<p>Plumbers are too busy to deal with website headaches. Your phone needs to ring — that's it. With our monthly plan, we handle everything. You just pick up the phone when leads come in.</p>
+
+<h2>Pricing for plumbers</h2>
+<ul>
+  <li><strong>Setup:</strong> R499 once-off</li>
+  <li><strong>Monthly:</strong> R299/month</li>
+  <li><strong>What's included:</strong> Site build, hosting, mobile design, WhatsApp/call buttons, Google Business setup, monthly updates</li>
+</ul>
+
+<h2>Real talk</h2>
+<p>One extra emergency call-out a month pays for the whole year of website costs. <a href="https://wa.me/27789992503">WhatsApp us</a> and we'll have your plumbing site live in a week.</p>
+`,
+  },
+  {
+    slug: "restaurant-websites-south-africa",
+    title: "Restaurant Websites in South Africa: Why You Need One (and What It Should Cost)",
+    description:
+      "SA restaurants without a website are losing bookings to competitors every day. Here's exactly what a restaurant website needs — and how to get one for R299/month.",
+    date: "2025-03-26",
+    readTime: "6 min read",
+    category: "Industry",
+    content: `
+<p>Your restaurant has a Facebook page and an Instagram account. Why do you need a website? Because <strong>72% of South African diners check a restaurant's website before booking</strong> — and if you don't have one, they go to the place that does.</p>
+
+<h2>What a restaurant website actually needs</h2>
+<ul>
+  <li><strong>Menu (clearly displayed):</strong> Customers want to see your food and prices</li>
+  <li><strong>Photos that make people hungry:</strong> Professional food photography matters</li>
+  <li><strong>Online booking or WhatsApp booking link</strong></li>
+  <li><strong>Opening hours</strong> (current — not "see Facebook")</li>
+  <li><strong>Location with embedded Google Map</strong></li>
+  <li><strong>Click-to-call button</strong> on mobile</li>
+  <li><strong>Reviews/testimonials</strong> from real diners</li>
+  <li><strong>Specials or events</strong> section you can update easily</li>
+</ul>
+
+<h2>Why monthly plans are perfect for restaurants</h2>
+<p>Restaurant menus change. Specials change. Holiday hours change. With a once-off website, every change is a fight. With <strong>Lunexweb's monthly plan</strong>, you WhatsApp us — "new menu attached, please update" — and it's done.</p>
+
+<h2>What it costs in South Africa</h2>
+<ul>
+  <li><strong>DIY (Wix/Squarespace):</strong> R250/month + your time + amateur look</li>
+  <li><strong>Once-off custom build:</strong> R15,000 – R30,000 + ongoing support fees</li>
+  <li><strong>Lunexweb monthly:</strong> R499 setup + R299/month, professionally built and managed</li>
+</ul>
+
+<h2>Real ROI for restaurants</h2>
+<p>One extra booking a week from your website = R5,000+/month in revenue. The website pays for itself many times over.</p>
+
+<h2>Want a website that brings diners?</h2>
+<p><a href="https://wa.me/27789992503">WhatsApp us</a> with your restaurant name and we'll show you exactly what we'd build.</p>
 `,
   },
 ];
