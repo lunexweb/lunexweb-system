@@ -1,30 +1,9 @@
-import { useState } from "react";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { WHATSAPP_LINK, WHATSAPP_NUMBER, EMAIL } from "@/lib/site";
 
-export function Contact() {
-  const [result, setResult] = useState("");
-
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target as HTMLFormElement);
-    const key = import.meta.env.VITE_FORM_KEY;
-    if (key) formData.append("access_key", key);
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      (event.target as HTMLFormElement).reset();
-    } else {
-      setResult("Error");
-    }
-  };
+export function ContactSection() {
+  const formKey = import.meta.env.VITE_FORM_KEY ?? "";
+  const formEndpoint = "https://" + "api.web3forms.com" + "/submit";
 
   return (
     <section id="contact" className="py-24 bg-secondary">
@@ -53,7 +32,8 @@ export function Contact() {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-2xl bg-card border border-border p-6 shadow-elegant space-y-4">
+        <form action={formEndpoint} method="POST" className="rounded-2xl bg-card border border-border p-6 shadow-elegant space-y-4">
+          <input type="hidden" name="access_key" value={formKey} />
           <div>
             <label className="text-sm font-medium">Your name</label>
             <input type="text" name="name" required maxLength={100} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
@@ -68,18 +48,10 @@ export function Contact() {
           </div>
           <button
             type="submit"
-            disabled={result === "Sending...."}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3 font-medium shadow-glow hover:opacity-90 transition disabled:opacity-60"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3 font-medium shadow-glow hover:opacity-90 transition"
           >
-            <MessageCircle className="h-4 w-4" />
-            {result === "Sending...." ? "Sending…" : "Send Message"}
+            <MessageCircle className="h-4 w-4" /> Send Message
           </button>
-          {result === "Form Submitted Successfully" && (
-            <p className="text-xs text-center text-green-600 font-medium">Message sent! We'll be in touch soon.</p>
-          )}
-          {result === "Error" && (
-            <p className="text-xs text-center text-destructive">Something went wrong. Please try WhatsApp instead.</p>
-          )}
         </form>
       </div>
     </section>
