@@ -46,6 +46,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lunexweb-system.vercel.app/blog/web-design-durban</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb-system.vercel.app/blog/web-design-port-elizabeth</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb-system.vercel.app/blog/websites-for-lawyers-attorneys-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb-system.vercel.app/blog/websites-for-salons-spas-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb-system.vercel.app/blog/websites-for-mechanics-auto-shops-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lunexweb-system.vercel.app/blog/why-every-sa-business-needs-a-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

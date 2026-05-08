@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { WhyRent } from "@/components/site/WhyRent";
 import { Services } from "@/components/site/Services";
 import { Pricing } from "@/components/site/Pricing";
 import { WhyUs } from "@/components/site/WhyUs";
@@ -16,16 +18,18 @@ export function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Web Design South Africa | Affordable Business Websites — Lunexweb</title>
+        <title>Rent A Professional Business Website From R299/Month | Lunexweb South Africa</title>
         <meta
           name="description"
-          content="Lunexweb builds professional, ads-ready websites for South African businesses. Based in Johannesburg, serving Cape Town, Durban, Pretoria & all SA cities. Plans from R299/month + R499 once-off setup."
+          content="Rent a professional website for your business from R299/month. Lunexweb sets up and manages everything — hosting, updates, support, WhatsApp integration. R499 once-off setup."
         />
         <link rel="canonical" href="https://lunexweb-system.vercel.app/" />
       </Helmet>
       <main className="min-h-screen bg-background text-foreground">
         <Navbar />
         <Hero />
+        <HowItWorks />
+        <WhyRent />
         <Services />
         <Pricing />
         <WhyUs />

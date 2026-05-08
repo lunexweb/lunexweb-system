@@ -396,4 +396,188 @@ export const blogPosts: BlogPost[] = [
 <p><a href="https://wa.me/27789992503">WhatsApp us</a> with your restaurant name and we'll show you exactly what we'd build.</p>
 `,
   },
+  {
+    slug: "web-design-durban",
+    title: "Web Design Durban: Monthly Website Plans for KZN Businesses from R299/Month",
+    description:
+      "Durban and KwaZulu-Natal businesses — get a professional website without the upfront fees. Lunexweb monthly plans cover everything: build, hosting, updates, support.",
+    date: "2025-04-02",
+    readTime: "5 min read",
+    category: "Local",
+    content: `
+<p>Durban is a fast-growing business hub — tourism, logistics, manufacturing, hospitality and retail all booming. But too many KZN businesses still rely on outdated Facebook pages or no online presence at all.</p>
+
+<h2>Why Durban businesses pick Lunexweb</h2>
+<ul>
+  <li><strong>Monthly plans, not big upfront fees:</strong> R499 setup + R299/month</li>
+  <li><strong>Built for KZN customers:</strong> Mobile-first, fast even on slow networks</li>
+  <li><strong>WhatsApp support:</strong> Quick replies in your timezone</li>
+  <li><strong>Local SEO included:</strong> We optimize for Durban-area searches</li>
+</ul>
+
+<h2>Areas we serve in Durban & KZN</h2>
+<p>Durban CBD, Umhlanga, Ballito, Durban North, Westville, Hillcrest, Pinetown, Berea, Morningside, Glenwood, Amanzimtoti, Pietermaritzburg, Richards Bay, Newcastle and surrounding areas.</p>
+
+<h2>Industries we work with in Durban</h2>
+<ul>
+  <li>Tourism, B&Bs, holiday rentals on the KZN coast</li>
+  <li>Restaurants, takeaways and cafés</li>
+  <li>Logistics, freight and warehousing companies</li>
+  <li>Construction and trades</li>
+  <li>Beauty, spas, hair salons</li>
+  <li>Professional services (lawyers, accountants, consultants)</li>
+</ul>
+
+<h2>Pricing for Durban businesses</h2>
+<p>R499 once-off setup + R299/month covers everything: design, build, hosting, domain, SSL, content updates, security, backups and Google Business profile.</p>
+
+<p><a href="https://wa.me/27789992503">WhatsApp us</a> from Durban and we'll have your quote within an hour.</p>
+`,
+  },
+  {
+    slug: "web-design-port-elizabeth",
+    title: "Web Design Port Elizabeth (Gqeberha): Affordable Monthly Plans for EC Businesses",
+    description:
+      "Port Elizabeth / Gqeberha businesses — Lunexweb builds professional websites on a R299/month plan. No upfront shock, no abandoned sites.",
+    date: "2025-04-09",
+    readTime: "4 min read",
+    category: "Local",
+    content: `
+<p>Port Elizabeth (now Gqeberha) and the wider Eastern Cape is full of hard-working businesses that deserve a proper online presence — but local web designers often charge too much or deliver work that doesn't last.</p>
+
+<h2>The Lunexweb monthly plan for PE businesses</h2>
+<ul>
+  <li><strong>Setup:</strong> R499 once-off — we start building immediately</li>
+  <li><strong>Monthly:</strong> R299/month covers hosting, updates, security & support</li>
+  <li><strong>Built in 5–7 days</strong></li>
+  <li><strong>Mobile-first design</strong> for SA users on the go</li>
+</ul>
+
+<h2>Areas we serve in the Eastern Cape</h2>
+<p>Gqeberha (Port Elizabeth), Summerstrand, Walmer, Newton Park, Mount Pleasant, Despatch, Uitenhage, East London, Jeffreys Bay, Grahamstown / Makhanda.</p>
+
+<h2>Eastern Cape industries we work with</h2>
+<ul>
+  <li>Tourism, guesthouses and Airbnb hosts</li>
+  <li>Trades (plumbers, electricians, builders)</li>
+  <li>Auto-related businesses (PE is SA's auto manufacturing hub)</li>
+  <li>Restaurants and cafés</li>
+  <li>Professional services and consultants</li>
+</ul>
+
+<p><a href="https://wa.me/27789992503">Chat on WhatsApp</a> — we'll send you a free, no-obligation quote.</p>
+`,
+  },
+  {
+    slug: "websites-for-lawyers-attorneys-south-africa",
+    title: "Websites for Lawyers & Attorneys in South Africa: What Your Firm Needs",
+    description:
+      "South African law firms — clients judge your firm by your website before they ever call. Here's what your site needs and how Lunexweb's monthly plans deliver.",
+    date: "2025-04-16",
+    readTime: "6 min read",
+    category: "Industry",
+    content: `
+<p>If you're a South African attorney without a serious website, you're losing high-value clients to firms that take their online presence seriously. Legal clients research extensively before they pick up the phone — and your website is their first impression.</p>
+
+<h2>What a law firm website must have</h2>
+<ul>
+  <li><strong>Practice areas page</strong> (family law, conveyancing, criminal, commercial, etc.)</li>
+  <li><strong>Attorney bios</strong> with credentials and qualifications</li>
+  <li><strong>Trust signals:</strong> LSSA registration, BBBEE level, years in practice</li>
+  <li><strong>Clear contact options:</strong> phone, WhatsApp, email, office address with map</li>
+  <li><strong>Confidential intake form</strong> — secure & compliant</li>
+  <li><strong>Articles or insights</strong> showing expertise (great for SEO too)</li>
+  <li><strong>SSL & security</strong> — non-negotiable for legal sites</li>
+</ul>
+
+<h2>Why a monthly website plan fits law firms</h2>
+<p>Law firms need to update content frequently — new partners, new practice areas, legal updates, articles. Once-off websites become stale fast. With Lunexweb's monthly plan, your site stays current without you ever touching code.</p>
+
+<h2>Pricing for SA law firms</h2>
+<ul>
+  <li><strong>Setup:</strong> R499 once-off (more for larger multi-attorney sites)</li>
+  <li><strong>Monthly:</strong> From R299/month</li>
+  <li><strong>What we manage:</strong> Hosting, SSL, security, content updates, Google Business profile, basic SEO</li>
+</ul>
+
+<h2>Want clients to take your firm seriously?</h2>
+<p><a href="https://wa.me/27789992503">WhatsApp us</a> — we've built sites for attorneys in Johannesburg, Cape Town, Pretoria and Durban, and we know what legal clients expect.</p>
+`,
+  },
+  {
+    slug: "websites-for-salons-spas-south-africa",
+    title: "Salon & Spa Websites in South Africa: Fill Your Booking Calendar",
+    description:
+      "SA hair salons, beauty spas and barbers — a proper website fills your appointment book. See what works, what to avoid, and how to get one for R299/month.",
+    date: "2025-04-23",
+    readTime: "5 min read",
+    category: "Industry",
+    content: `
+<p>Salons and spas live and die by bookings. If a customer can't easily see your services, prices, location and book a slot — they're booking with the salon down the road.</p>
+
+<h2>What a salon or spa website must have</h2>
+<ul>
+  <li><strong>Service menu with prices</strong> (don't make people ask)</li>
+  <li><strong>Online or WhatsApp booking</strong> — the easier the better</li>
+  <li><strong>Gallery of your work</strong> (hair, nails, skin, results)</li>
+  <li><strong>Photos of your space</strong> — clients want to see vibe before booking</li>
+  <li><strong>Stylist / therapist bios</strong> with photos</li>
+  <li><strong>Reviews & testimonials</strong></li>
+  <li><strong>Location with Google Maps</strong></li>
+  <li><strong>Loyalty / package deals</strong> displayed clearly</li>
+</ul>
+
+<h2>Why monthly plans work for salons</h2>
+<p>Service prices change. Stylists come and go. New treatments are added. Promotions need updating. With a Lunexweb monthly plan, you WhatsApp us the changes and they're live within hours. No "that'll be R500 extra" calls.</p>
+
+<h2>Pricing for SA salons & spas</h2>
+<ul>
+  <li><strong>Setup:</strong> R499 once-off</li>
+  <li><strong>Monthly:</strong> R299/month — hosting, updates, security, support all included</li>
+  <li><strong>Bonus:</strong> WhatsApp booking button on every page</li>
+</ul>
+
+<h2>Real ROI</h2>
+<p>One extra appointment a week from your website = R2,000+/month in revenue. The site pays for itself many times over.</p>
+
+<p><a href="https://wa.me/27789992503">WhatsApp us</a> with your salon name and we'll show you exactly what we'd build.</p>
+`,
+  },
+  {
+    slug: "websites-for-mechanics-auto-shops-south-africa",
+    title: "Websites for Mechanics & Auto Shops in South Africa: Drive More Bookings",
+    description:
+      "SA mechanics, panel beaters and auto shops — your customers search Google before they choose. Get a proper website on a R299/month plan.",
+    date: "2025-04-30",
+    readTime: "5 min read",
+    category: "Industry",
+    content: `
+<p>"Mechanic near me", "panel beater Johannesburg", "car service Cape Town" — South Africans Google these every day. If your auto shop doesn't show up with a real website, your competition gets the booking.</p>
+
+<h2>What a mechanic / auto shop website needs</h2>
+<ul>
+  <li><strong>Services list:</strong> servicing, repairs, diagnostics, panel beating, tyres</li>
+  <li><strong>Vehicle brands you specialize in</strong> (German, Japanese, fleet, etc.)</li>
+  <li><strong>Click-to-call & WhatsApp buttons</strong> (most auto leads call directly)</li>
+  <li><strong>Photos of your workshop</strong> (builds trust)</li>
+  <li><strong>Before / after photos</strong> for panel beaters</li>
+  <li><strong>Location & operating hours</strong></li>
+  <li><strong>Quote request form</strong></li>
+  <li><strong>Google reviews</strong> on the homepage</li>
+</ul>
+
+<h2>Why a monthly plan beats a once-off site for auto businesses</h2>
+<p>You're busy fixing cars — not managing a website. With Lunexweb's monthly plan, we run everything. Updates, security, hosting, Google Business profile — all sorted. You just take the calls.</p>
+
+<h2>Pricing for SA auto shops</h2>
+<ul>
+  <li><strong>Setup:</strong> R499 once-off</li>
+  <li><strong>Monthly:</strong> R299/month</li>
+  <li><strong>Includes:</strong> Site, hosting, mobile design, click-to-call, Google Business profile, monthly updates</li>
+</ul>
+
+<h2>The math</h2>
+<p>One extra service booking a month at R3,000 covers your website for nearly a year. <a href="https://wa.me/27789992503">WhatsApp us</a> and we'll have your auto shop online in a week.</p>
+`,
+  },
 ];

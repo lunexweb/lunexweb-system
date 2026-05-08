@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { WHATSAPP_LINK, EMAIL } from "@/lib/site";
 
 export function Footer() {
@@ -15,10 +16,11 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold">Quick Links</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/70">
-            <li><a href="#services" className="hover:text-white">Services</a></li>
-            <li><a href="#pricing" className="hover:text-white">Pricing</a></li>
-            <li><a href="#portfolio" className="hover:text-white">Portfolio</a></li>
-            <li><a href="#faq" className="hover:text-white">FAQ</a></li>
+            <li><Link to="/#services" className="hover:text-white">Services</Link></li>
+            <li><Link to="/#pricing" className="hover:text-white">Pricing</Link></li>
+            <li><Link to="/#portfolio" className="hover:text-white">Portfolio</Link></li>
+            <li><Link to="/#faq" className="hover:text-white">FAQ</Link></li>
+            <li><Link to="/blog" className="hover:text-white">Blog</Link></li>
           </ul>
         </div>
         <div>

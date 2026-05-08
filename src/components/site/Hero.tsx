@@ -10,14 +10,14 @@ export function Hero() {
         <div className="animate-fade-in-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-whatsapp animate-pulse" />
-            Web Design Agency · Johannesburg, South Africa
+            Website-as-a-Service · Built for South African Businesses
           </span>
           <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
-            Web Design For{" "}
-            <span className="text-gradient-brand">South African Businesses</span> That Brings Customers
+            Rent A Professional Website For Your{" "}
+            <span className="text-gradient-brand">Business</span>
           </h1>
           <p className="mt-3 text-base lg:text-lg text-white/70 max-w-xl">
-            Professional, ads-ready websites for businesses across South Africa — Johannesburg, Cape Town, Durban, Pretoria and beyond. Built to convert visitors into paying customers.
+            We help South African businesses look professional online — without huge upfront costs. From R299/month, we design, set up and manage your website while you focus on getting customers.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a

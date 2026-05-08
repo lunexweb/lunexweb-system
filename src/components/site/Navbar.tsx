@@ -41,9 +41,9 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
+              <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -100,14 +100,14 @@ export function Navbar() {
 
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
-                href={l.href}
+                to={l.href}
                 className="flex items-center py-4 text-base font-medium border-b border-border/50 last:border-0 hover:text-accent transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
