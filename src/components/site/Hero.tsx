@@ -8,16 +8,16 @@ export function Hero() {
       <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_20%,oklch(0.62_0.18_255/.3),transparent_60%)]" />
       <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-10 items-center w-full">
         <div className="animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-3 py-1 text-xs font-semibold text-whatsapp backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-whatsapp animate-pulse" />
-            Website-as-a-Service · Built for South African Businesses
+            Launch Offer · R499 Setup + 1st Month FREE
           </span>
           <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
             Rent A Professional Website For Your{" "}
             <span className="text-gradient-brand">Business</span>
           </h1>
           <p className="mt-3 text-base lg:text-lg text-white/70 max-w-xl">
-            We help South African businesses look professional online — without huge upfront costs. From R299/month, we design, set up and manage your website while you focus on getting customers.
+            We help South African businesses look professional online — without huge upfront costs. <span className="text-white font-semibold">R499 setup + your 1st month free.</span> Then just R299/month while we design, host and manage everything.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a

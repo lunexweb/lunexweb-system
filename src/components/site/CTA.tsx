@@ -12,7 +12,7 @@ export function CTA() {
             Customers Trust Businesses That <span className="text-gradient-brand">Look Professional Online</span>
           </h2>
           <p className="relative mt-5 text-white/80 max-w-2xl mx-auto">
-            If customers cannot find your business online or your website looks outdated, they often move to competitors instead.
+            If customers cannot find your business online or your website looks outdated, they often move to competitors instead. Start with <span className="text-white font-semibold">R499 setup + your 1st month free</span>.
           </p>
           <a
             href={WHATSAPP_LINK}

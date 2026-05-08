@@ -8,8 +8,8 @@ const steps = [
   },
   {
     icon: CreditCard,
-    title: "Pay R499 once-off setup",
-    description: "A small one-time fee to get your professional website built and live.",
+    title: "Pay R499 setup — 1st month FREE",
+    description: "A small one-time fee to get your professional website built and live. Your first month of management is on us.",
   },
   {
     icon: Globe,

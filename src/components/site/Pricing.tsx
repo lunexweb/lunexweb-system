@@ -55,7 +55,7 @@ export function Pricing() {
             Professional Online Presence From R299/month
           </h2>
           <p className="mt-4 text-muted-foreground">
-            R499 once-off setup fee, then pay monthly. You bring your own domain — we handle everything else.
+            R499 once-off setup — <span className="font-semibold text-foreground">your 1st month is free</span>. After that, pay monthly. You bring your own domain (±R150/year) — we handle everything else.
           </p>
         </div>
         <div className="mt-14 grid md:grid-cols-3 gap-6">
@@ -76,7 +76,7 @@ export function Pricing() {
               <h3 className="text-lg font-semibold">{p.name}</h3>
               {p.price !== "Custom" && (
                 <p className={`mt-3 text-xs font-medium ${p.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
-                  R499 once-off setup · then
+                  R499 setup · 1st month FREE · then
                 </p>
               )}
               <div className={`${p.price !== "Custom" ? "mt-1" : "mt-4"} flex items-baseline gap-1`}>
