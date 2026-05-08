@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { WHATSAPP_LINK } from "@/lib/site";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -34,9 +35,9 @@ export function Navbar() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-center">
-            <img src="/portfolio/2.png" alt="Lunexweb" className="h-8 w-auto" />
-          </a>
+          <Link to="/" className="flex items-center" aria-label="Lunexweb home">
+            <img src="/portfolio/2.png" alt="Lunexweb — Web Design South Africa" className="h-8 w-auto" />
+          </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             {links.map((l) => (

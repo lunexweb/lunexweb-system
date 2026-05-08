@@ -1,40 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./styles.css";
-import { Navbar } from "@/components/site/Navbar";
-import { Hero } from "@/components/site/Hero";
-import { Services } from "@/components/site/Services";
-import { Pricing } from "@/components/site/Pricing";
-import { WhyUs } from "@/components/site/WhyUs";
-import { Portfolio } from "@/components/site/Portfolio";
-import { Testimonials } from "@/components/site/Testimonials";
-import { FAQ } from "@/components/site/FAQ";
-import { CTA } from "@/components/site/CTA";
-import { ContactSection } from "@/components/site/ContactSection";
-import { Footer } from "@/components/site/Footer";
-import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
-
-function App() {
-  return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Pricing />
-      <WhyUs />
-      <Portfolio />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <ContactSection />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
-  );
-}
+import { HomePage } from "@/pages/HomePage";
+import { BlogPage } from "@/pages/BlogPage";
+import { BlogPostPage } from "@/pages/BlogPostPage";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
