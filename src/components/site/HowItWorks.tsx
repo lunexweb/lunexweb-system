@@ -1,25 +1,26 @@
-import { Package, CreditCard, Globe, Settings } from "lucide-react";
+import { Package, MessageCircle, Globe, Settings } from "lucide-react";
+import shopperImg from "@/assets/tanrica-sale-9839498_1920.png";
 
 const steps = [
   {
     icon: Package,
-    title: "Choose your package",
-    description: "Pick the monthly plan that fits your business. Starter, Business or Pro.",
+    title: "Pick your store type",
+    description: "Choose the Catalog Store (WhatsApp ordering) or Full Store (payment gateway + dashboard) — whichever fits where your brand is right now.",
   },
   {
-    icon: CreditCard,
-    title: "Pay R499 setup — 1st month FREE",
-    description: "A small one-time fee to get your professional website built and live. Your first month of management is on us.",
+    icon: MessageCircle,
+    title: "WhatsApp us your details",
+    description: "Send us your brand name, products, logo and any content you have. We handle the rest — no technical skills needed from you.",
   },
   {
     icon: Globe,
-    title: "Buy your domain (±R150/year)",
-    description: "We help you secure your own domain (yourbusiness.co.za) — you own it forever.",
+    title: "We build & launch your store",
+    description: "Your store goes live within 7–14 days on your own domain. We set up SEO, Google Business and ad-ready tracking from day one.",
   },
   {
     icon: Settings,
-    title: "We set up & manage everything monthly",
-    description: "Hosting, security, updates, content changes, support — all handled. You focus on customers.",
+    title: "You run it — we keep it live",
+    description: "Your dashboard gives you full control over products, stock, orders and promotions. We handle hosting, security and technical support so everything keeps running smoothly.",
   },
 ];
 
@@ -27,14 +28,23 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 bg-secondary">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider">How It Works</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            Get Online in 4 Simple Steps
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            No technical headaches. No long contracts. Just a professional website your business can afford.
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-10 max-w-5xl mx-auto">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider">How It Works</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
+              Your Store Live in 4 Simple Steps
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              No technical headaches. No upfront fees. Just a professional online store your brand can afford — built and managed for you.
+            </p>
+          </div>
+          <div className="hidden lg:block shrink-0">
+            <img
+              src={shopperImg}
+              alt="Happy online shopper"
+              className="w-52 h-52 object-contain"
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

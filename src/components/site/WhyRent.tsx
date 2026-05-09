@@ -1,35 +1,36 @@
-import { ShieldCheck, Search, Phone, Smartphone, TrendingUp, Clock } from "lucide-react";
+import { ShieldCheck, Search, ShoppingBag, Smartphone, TrendingUp, Clock } from "lucide-react";
+import shoppingImg from "@/assets/simonrtr120-shopping-10235472_1920.jpg";
 
 const benefits = [
   {
-    icon: ShieldCheck,
-    title: "Look trustworthy",
-    desc: "A professional website tells customers you're a real, established business — not just a Facebook page.",
+    icon: ShoppingBag,
+    title: "Sell beyond WhatsApp",
+    desc: "A proper online store lets customers browse, choose and pay — without you having to manually handle every order.",
   },
   {
     icon: Search,
-    title: "Appear on Google",
-    desc: "When customers search for your service in your area, your business shows up — instead of your competitors.",
+    title: "Get found on Google",
+    desc: "When people search for what you sell, your store shows up — not just a Facebook page that Google ignores.",
   },
   {
-    icon: Phone,
-    title: "Get more enquiries",
-    desc: "WhatsApp buttons, contact forms and click-to-call buttons turn visitors into real leads, every day.",
+    icon: ShieldCheck,
+    title: "Look like a real brand",
+    desc: "A professional store builds trust. Customers spend more and come back when your brand looks credible and established.",
   },
   {
     icon: Smartphone,
-    title: "Easier for customers to contact you",
-    desc: "Your services, prices, hours and location — all in one place. No more 'inbox me for prices'.",
+    title: "Mobile-first shopping",
+    desc: "Over 80% of SA shoppers buy on their phones. Every store we build is designed for mobile from the ground up.",
   },
   {
     icon: TrendingUp,
-    title: "Compete with bigger businesses",
-    desc: "Look as professional as a major brand at small-business prices. Price stops being the only way customers compare you.",
+    title: "Run ads that actually work",
+    desc: "Facebook, Instagram and Google ads perform better when they send traffic to a proper store — not a WhatsApp number.",
   },
   {
     icon: Clock,
-    title: "Open online 24/7",
-    desc: "While you sleep, your website is showing your services, taking enquiries and building trust with future customers.",
+    title: "Sell 24/7 without lifting a finger",
+    desc: "Your store takes orders and processes payments while you sleep, travel or focus on sourcing new stock.",
   },
 ];
 
@@ -37,14 +38,28 @@ export function WhyRent() {
   return (
     <section id="why-rent" className="py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider">Why Your Business Needs A Website</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            A Professional Website Helps Your Business Get More Customers
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Most South African customers search Google before contacting a business. If they can't find you online — or your business looks outdated — they often move to a competitor who looks more professional.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider">Why Your Brand Needs An Online Store</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
+              Stop Losing Sales to Brands With Better Stores
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              South African shoppers search online before they buy. If your brand only lives on Instagram and WhatsApp, you're losing customers to competitors with a proper store every single day.
+            </p>
+            <div className="mt-6 rounded-2xl bg-secondary border border-border p-6">
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">"Instagram and WhatsApp are enough."</span> They're a great start — but they don't rank on Google, they don't process payments automatically, and they don't make your brand look like a serious business. A proper online store does all three.
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <img
+              src={shoppingImg}
+              alt="Online shopping — laptop with ecommerce store and shopping cart"
+              className="rounded-2xl shadow-elegant w-full object-cover max-h-[420px]"
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,11 +77,6 @@ export function WhyRent() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl bg-secondary border border-border p-8 max-w-3xl mx-auto text-center">
-          <p className="text-base text-muted-foreground">
-            <span className="font-semibold text-foreground">"Facebook and WhatsApp are enough."</span> They're a great start — but they don't show up on Google, they don't show your services clearly, and they don't make your business look established. A professional website does all three.
-          </p>
-        </div>
       </div>
     </section>
   );

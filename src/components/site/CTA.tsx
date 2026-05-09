@@ -1,18 +1,26 @@
 import { MessageCircle } from "lucide-react";
 import { WHATSAPP_LINK } from "@/lib/site";
+import ctaBg from "@/assets/tumisu-online-4275963_1920.jpg";
 
 export function CTA() {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-hero text-white p-10 sm:p-16 text-center shadow-elegant">
-          <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gradient-brand opacity-30 blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-gradient-brand opacity-20 blur-3xl" />
+        <div className="relative overflow-hidden rounded-3xl text-white p-10 sm:p-16 text-center shadow-elegant">
+          <img
+            src={ctaBg}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+          <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gradient-brand opacity-20 blur-3xl" />
           <h2 className="relative text-3xl sm:text-5xl font-bold tracking-tight">
-            Customers Trust Businesses That <span className="text-gradient-brand">Look Professional Online</span>
+            Ready to Sell Online?{" "}
+            <span className="text-gradient-brand">Get Your Store Live in 14 Days</span>
           </h2>
           <p className="relative mt-5 text-white/80 max-w-2xl mx-auto">
-            If customers cannot find your business online or your website looks outdated, they often move to competitors instead. Start with <span className="text-white font-semibold">R499 setup + your 1st month free</span>.
+            No setup fees. No contracts. Just a flat monthly rental — we build, host and manage your store while you focus on your brand. <span className="text-white font-semibold">From R799/month.</span>
           </p>
           <a
             href={WHATSAPP_LINK}

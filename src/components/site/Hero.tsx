@@ -1,5 +1,5 @@
-import { MessageCircle, ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
-import heroImg from "@/assets/hero-dashboard.jpg";
+import { MessageCircle, ArrowRight, ShieldCheck, Zap, ShoppingBag } from "lucide-react";
+import heroImg from "@/assets/pexels-shkrabaanthony-6207729.jpg";
 import { WHATSAPP_LINK } from "@/lib/site";
 
 export function Hero() {
@@ -10,14 +10,15 @@ export function Hero() {
         <div className="animate-fade-in-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-3 py-1 text-xs font-semibold text-whatsapp backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-whatsapp animate-pulse" />
-            Launch Offer · R499 Setup + 1st Month FREE
+            South African Ecommerce Stores · Monthly Rental
           </span>
           <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
-            Rent A Professional Website For Your{" "}
-            <span className="text-gradient-brand">Business</span>
+            Rent Your Own{" "}
+            <span className="text-gradient-brand">Online Store</span>
+            {" "}— We Build & Manage It
           </h1>
           <p className="mt-3 text-base lg:text-lg text-white/70 max-w-xl">
-            We help South African businesses look professional online — without huge upfront costs. <span className="text-white font-semibold">R499 setup + your 1st month free.</span> Then just R299/month while we design, host and manage everything.
+            We build professional online stores for South African brands — from simple catalog stores with WhatsApp ordering to fully powered stores with payment gateways and dashboards. <span className="text-white font-semibold">No setup fees. Just a flat monthly rental.</span>
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a
@@ -37,18 +38,18 @@ export function Hero() {
           </div>
           <div className="mt-5 hidden sm:flex flex-wrap gap-6 text-sm text-white/70">
             <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-brand-glow" /> South African team</div>
-            <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-brand-glow" /> Fast turnaround</div>
-            <div className="flex items-center gap-2"><Star className="h-4 w-4 text-brand-glow" /> Built to run ads</div>
+            <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-brand-glow" /> Live within 7–14 days</div>
+            <div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4 text-brand-glow" /> Built for SA brands</div>
           </div>
         </div>
-        <div className="relative animate-float hidden lg:block">
+        <div className="relative animate-float hidden lg:flex lg:items-center lg:justify-center">
           <div className="absolute -inset-10 bg-gradient-brand opacity-20 blur-3xl rounded-full" />
           <img
             src={heroImg}
-            alt="Modern responsive website dashboard"
+            alt="Modern ecommerce store dashboard"
             width={1280}
             height={960}
-            className="relative rounded-2xl shadow-elegant border border-white/10"
+            className="relative rounded-2xl shadow-elegant border border-white/10 w-full max-h-[72vh] object-contain"
           />
         </div>
       </div>

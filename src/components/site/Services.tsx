@@ -1,29 +1,30 @@
-import { Globe, MapPin, Share2, Wrench } from "lucide-react";
+import { ShoppingCart, CreditCard, Search, Wrench } from "lucide-react";
+import servicesImg from "@/assets/andrespradagarcia-online-6817350_1920.jpg";
 
 const services = [
   {
-    icon: Globe,
-    title: "Website Development",
-    desc: "Professional business websites built to run ads and convert visitors into paying customers — on Google, Facebook, and Instagram.",
-    points: ["Built to run ads", "Mobile responsive", "Conversion focused"],
+    icon: ShoppingCart,
+    title: "Catalog Store",
+    desc: "A clean, mobile-first store where customers add to cart and checkout — you get the order on WhatsApp and they receive a PDF with your banking details.",
+    points: ["Add to cart & checkout flow", "Order via WhatsApp + PDF", "Up to 30 products"],
   },
   {
-    icon: MapPin,
-    title: "Google Business Profile",
-    desc: "We help your business appear on Google Search and Maps so nearby customers can easily find and contact you.",
-    points: ["Maps setup", "Local visibility", "Review strategy"],
+    icon: CreditCard,
+    title: "Full Ecommerce Store",
+    desc: "A complete online store with a payment gateway, admin dashboard, inventory management and order tracking — built for serious SA brands.",
+    points: ["PayFast / Ozow / Paystack", "Admin dashboard", "Order & inventory management"],
   },
   {
-    icon: Share2,
-    title: "Social Media & Digital Marketing",
-    desc: "Professional social media pages that make your business look active, trusted, and ready for customers.",
-    points: ["Social media setup", "Content creation", "Brand consistency"],
+    icon: Search,
+    title: "SEO & Ad-Ready Setup",
+    desc: "Every store we build is optimised for Google and designed to run Facebook, Instagram and Google ads from day one.",
+    points: ["Google Business setup", "SEO foundations", "Built for paid ads"],
   },
   {
     icon: Wrench,
-    title: "Monthly Website Management",
-    desc: "We keep your website updated, running properly, and looking professional every month.",
-    points: ["Updates & edits", "Hosting included", "Technical support"],
+    title: "Hosting & Technical Support",
+    desc: "We keep your store online, fast and secure every month. You get your own dashboard to manage products, stock and orders — we handle everything under the hood.",
+    points: ["Hosting, uptime & security", "Technical support", "You control your dashboard"],
   },
 ];
 
@@ -31,14 +32,23 @@ export function Services() {
   return (
     <section id="services" className="py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider">What we do</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            Helping Your Business Look Professional Online
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Your customers search online before they contact you. We help your business look trustworthy, professional, and easy to reach.
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-10 max-w-5xl mx-auto">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider">What we do</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
+              Online Stores Built & Managed For SA Brands
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Whether you're just launching or ready to scale, we build the right store for your stage — and manage it every month so it keeps selling.
+            </p>
+          </div>
+          <div className="hidden lg:block shrink-0">
+            <img
+              src={servicesImg}
+              alt="Shopping cart on keyboard — ecommerce services"
+              className="w-72 h-48 object-cover rounded-2xl shadow-elegant"
+            />
+          </div>
         </div>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (

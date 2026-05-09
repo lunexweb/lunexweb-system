@@ -5,10 +5,9 @@ import { Services } from "@/components/site/Services";
 import { Pricing } from "@/components/site/Pricing";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Portfolio } from "@/components/site/Portfolio";
-import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
-import { Contact } from "@/components/site/Contact";
+import { ContactSection } from "@/components/site/ContactSection";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 
@@ -42,10 +41,9 @@ function Index() {
       <Pricing />
       <WhyUs />
       <Portfolio />
-      <Testimonials />
       <FAQ />
       <CTA />
-      <Contact />
+      <ContactSection />
       <Footer />
       <FloatingWhatsApp />
     </main>

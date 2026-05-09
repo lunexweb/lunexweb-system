@@ -3,12 +3,17 @@ import {
 } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "How long does it take to build my website?", a: "Most projects go live within 7–14 days. Larger custom systems take 3–6 weeks." },
-  { q: "How does the pricing work?", a: "There is a once-off R499 setup fee to get your website built. After that, you pay a monthly fee from R299/month and we maintain and look after your website for you. You bring your own domain." },
-  { q: "Can you help me appear on Google?", a: "Yes. Every Business and Premium plan includes Google Business Profile setup and SEO basics." },
-  { q: "Do you manage social media pages?", a: "Yes — we can set up and manage your Facebook, Instagram and other social pages to keep your brand consistent and active online." },
-  { q: "Can I run ads to my LunexWeb website?", a: "Yes — that is exactly what our websites are built for. Every website we create is designed to work with Facebook Ads, Google Ads, and Instagram Ads so your budget goes further and more visitors become customers." },
-  { q: "Are you based in South Africa?", a: "Yes. LunexWeb is a South African team building for South African businesses." },
+  { q: "What is the difference between the Catalog Store and the Full Store?", a: "The Catalog Store lets customers add to cart and place their order — you receive the order via WhatsApp and the customer gets an auto-generated PDF with your banking details to make payment. No payment gateway needed. The Full Store adds a payment gateway (PayFast or Ozow), an admin dashboard, inventory management and order tracking — everything for a brand that wants to sell fully online with automated payments." },
+  { q: "Is there a setup fee?", a: "No. There are no setup fees and no hidden costs. You pay a flat monthly fee — we build, host and manage your store for that one fee." },
+  { q: "Is there a minimum term?", a: "Yes. All our stores are on a minimum-term management plan — 6 months or 12 months. This ensures we have enough time to properly build, optimise and support your store. After your minimum term, your plan continues on a monthly basis. We call it a 'website management agreement' rather than a contract — it simply sets out the monthly fee, what's included and the minimum period." },
+  { q: "What's included — and what's not?", a: "Included: store build, hosting, SSL security, your own dashboard to manage everything, technical support and SEO basics. Not included: paid ad spend (Facebook/Google budget is separate), professional photography and third-party transaction fees (e.g. PayFast charges per sale)." },
+  { q: "What happens if I want to cancel?", a: "You can cancel at the end of your minimum term by giving 30 days written notice. If you cancel early, the remaining months of your term apply. Your domain name and all your store content are always yours — we'll transfer everything to you." },
+  { q: "How long does it take to get my store live?", a: "Most stores are live within 7–14 days. Custom builds with complex features take 3–6 weeks." },
+  { q: "Can I update my products myself?", a: "Yes — that's exactly how it works. You get your own dashboard where you control everything: add products, update stock, set prices, manage orders and run promotions. You have full control over your store. Our role is to keep the site running fast, secure and online." },
+  { q: "Which payment gateways do you support?", a: "We integrate PayFast, Ozow, Paystack and Peach Payments — the most widely used and trusted SA payment gateways. Your customers can pay by card, EFT or instant EFT." },
+  { q: "Can I run Facebook or Google ads to my store?", a: "Yes — every store we build is ad-ready from day one. We set up Facebook Pixel, Google Analytics and conversion tracking so your ad spend goes further and you can see exactly what's working." },
+  { q: "What happens if I want to upgrade from Catalog to Full Store?", a: "We upgrade your existing store — no rebuilding from scratch. You keep your domain, SEO ranking and all your content. Just let us know when you're ready." },
+  { q: "Are you based in South Africa?", a: "Yes. LunexWeb is a South African team building for South African brands." },
 ];
 
 export function FAQ() {

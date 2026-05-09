@@ -7,7 +7,6 @@ import { Services } from "@/components/site/Services";
 import { Pricing } from "@/components/site/Pricing";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Portfolio } from "@/components/site/Portfolio";
-import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
@@ -34,7 +33,6 @@ export function HomePage() {
         <Pricing />
         <WhyUs />
         <Portfolio />
-        <Testimonials />
         <FAQ />
         <CTA />
         <ContactSection />
