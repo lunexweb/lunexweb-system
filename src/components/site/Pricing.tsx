@@ -4,8 +4,10 @@ import { WHATSAPP_LINK } from "@/lib/site";
 const plans = [
   {
     name: "Starter",
-    price: "R299",
+    priceMain: "R299",
+    priceCents: ".99",
     period: "/month",
+    setup: "R299",
     desc: "Perfect for businesses that need a professional online presence without large upfront costs.",
     features: [
       "Professional landing page",
@@ -18,8 +20,10 @@ const plans = [
   },
   {
     name: "Business",
-    price: "R499",
+    priceMain: "R499",
+    priceCents: ".99",
     period: "/month",
+    setup: "R499",
     desc: "Best for growing businesses that want more visibility, more enquiries, and a stronger online presence.",
     features: [
       "Multi-page website",
@@ -32,8 +36,10 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "Custom",
+    priceMain: "Custom",
+    priceCents: "",
     period: " quote",
+    setup: "",
     desc: "For businesses needing advanced systems, bookings, customer portals, or custom functionality.",
     features: [
       "Advanced custom systems",
@@ -74,14 +80,19 @@ export function Pricing() {
                 </span>
               )}
               <h3 className="text-lg font-semibold">{p.name}</h3>
-              {p.price !== "Custom" && (
+              {p.setup && (
                 <p className={`mt-3 text-xs font-medium ${p.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
-                  R499 setup · 1st month FREE · then
+                  {p.setup} setup · 1st month FREE · then
                 </p>
               )}
-              <div className={`${p.price !== "Custom" ? "mt-1" : "mt-4"} flex items-baseline gap-1`}>
-                <span className="text-4xl font-bold tracking-tight">{p.price}</span>
-                <span className={p.featured ? "text-primary-foreground/70" : "text-muted-foreground"}>
+              <div className={`${p.setup ? "mt-1" : "mt-4"} flex items-baseline gap-0.5`}>
+                <span className="text-4xl font-bold tracking-tight">{p.priceMain}</span>
+                {p.priceCents && (
+                  <sup className={`text-base font-bold self-start mt-1 ${p.featured ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                    {p.priceCents}
+                  </sup>
+                )}
+                <span className={`ml-0.5 ${p.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
                   {p.period}
                 </span>
               </div>
