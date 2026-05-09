@@ -17,10 +17,10 @@ export function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Rent An Online Store From R899/Month | Lunexweb South Africa</title>
+        <title>Rent An Online Store From R799/Month | Lunexweb South Africa</title>
         <meta
           name="description"
-          content="Rent a professional ecommerce store from R899/month. No setup fees. Lunexweb builds, hosts and manages your online store — you get the dashboard to run it. Serving all of South Africa."
+          content="Rent a professional ecommerce store from R799/month. No setup fees. Lunexweb builds, hosts and manages your online store — you get the dashboard to run it. Serving all of South Africa."
         />
         <link rel="canonical" href="https://lunexweb-system.vercel.app/" />
       </Helmet>
