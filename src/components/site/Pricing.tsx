@@ -6,8 +6,8 @@ import saleImg from "@/assets/coffeebeanworks-sale-1956066_1920.png";
 const plans = [
   {
     name: "Catalog Store",
-    price6: "R799",
-    price12: "R699",
+    price6: "R899",
+    price12: "R799",
     period: "/month",
     badge: "",
     desc: "Perfect for brands just starting out. Customers add to cart and place their order — you get the order via WhatsApp and they receive a PDF with your banking details to pay.",
@@ -75,7 +75,7 @@ export function Pricing() {
           <div className="flex-1 text-center lg:text-left">
             <p className="text-sm font-semibold text-accent uppercase tracking-wider">Pricing</p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-              Your Online Store From R799/month
+              Your Online Store From R899/month
             </h2>
             <p className="mt-4 text-muted-foreground">
               No setup fees. <span className="font-semibold text-foreground">6-month management plan</span> — we build and host your store, you get the dashboard to run it yourself. Save more on a 12-month plan.
