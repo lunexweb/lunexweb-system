@@ -21,7 +21,7 @@ export function WhyUs() {
               Why SA Brands Choose LunexWeb
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We build and host your store — you get the dashboard to run it. Our job is to keep everything fast, secure and online while you focus on selling.
+              We believe South African brands deserve a fighting chance. WhatsApp got you started — but it can't be found on Google. Your dream store shouldn't cost you your entire budget before you've sold a single product.
             </p>
           </div>
           <div className="hidden lg:block shrink-0">
