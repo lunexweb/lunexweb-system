@@ -1,30 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { HowItWorks } from "@/components/site/HowItWorks";
 import { Services } from "@/components/site/Services";
+import { WhyRent } from "@/components/site/WhyRent";
 import { Pricing } from "@/components/site/Pricing";
 import { WhyUs } from "@/components/site/WhyUs";
+import { WhoItsFor } from "@/components/site/WhoItsFor";
 import { Portfolio } from "@/components/site/Portfolio";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Footer } from "@/components/site/Footer";
-import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LunexWeb — Websites & Google for South African Businesses" },
+      { title: "LunexWeb — Professional Managed Websites for SA Businesses | From R299/Month" },
       {
         name: "description",
         content:
-          "LunexWeb builds professional websites and Google Business profiles that help South African businesses get more customers online.",
+          "Get a professional business website fully managed for you. LunexWeb builds, hosts and maintains your website every month. No setup fees. From R299/month. South Africa.",
       },
-      { property: "og:title", content: "LunexWeb — Web Design & Google for SA Businesses" },
+      { property: "og:title", content: "LunexWeb — Managed Websites for SA Businesses | From R299/Month" },
       {
         property: "og:description",
         content:
-          "Premium websites and Google profiles built to convert visitors into customers. Monthly plans from R299.",
+          "We build, host and manage your business website for a simple monthly fee. From R299/month. No setup fees.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -37,15 +39,17 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
+      <HowItWorks />
       <Services />
+      <WhyRent />
       <Pricing />
+      <WhoItsFor />
       <WhyUs />
       <Portfolio />
       <FAQ />
       <CTA />
       <ContactSection />
       <Footer />
-      <FloatingWhatsApp />
     </main>
   );
 }

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lunexweb-system.vercel.app/sitemap.xml
+Sitemap: https://lunexweb.com/sitemap.xml

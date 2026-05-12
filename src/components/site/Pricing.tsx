@@ -1,96 +1,98 @@
 import { useState } from "react";
-import { Check, MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/site";
-import saleImg from "@/assets/coffeebeanworks-sale-1956066_1920.png";
+import { Check, MessageCircle, Tag } from "lucide-react";
+import { openChat } from "@/lib/site";
 
 const plans = [
   {
-    name: "Catalog Store",
-    price6: "R799",
+    name: "Starter Website",
+    price6: "R449",
+    price12: "R299",
+    period: "/month",
+    badge: "",
+    desc: "Perfect for getting your business online. A clean 1-page website that helps customers find you and contact you easily.",
+    features: [
+      "1-page professional website",
+      "Mobile-friendly design",
+      "WhatsApp button",
+      "Basic SEO setup",
+      "Hosting & security included",
+      "Monthly management & support",
+    ],
+    cta: "Get Starter Website",
+    featured: false,
+    isCustom: false,
+    setup6: "R699",
+    savings: "R2,000",
+  },
+  {
+    name: "Business Website",
+    price6: "R699",
+    price12: "R499",
+    period: "/month",
+    badge: "Best for most businesses",
+    desc: "A full multi-page website that builds trust and generates more enquiries — the right choice for most growing SA businesses.",
+    features: [
+      "Up to 5 pages (extra pages on request)",
+      "Mobile-friendly design",
+      "WhatsApp button + contact form",
+      "Enquiry forms",
+      "Google Search Console setup",
+      "Better SEO structure",
+      "Custom branding & colour scheme",
+      "Hosting & security included",
+      "Monthly management & priority support",
+    ],
+    cta: "Get Business Website",
+    featured: true,
+    isCustom: false,
+    setup6: "R999",
+    savings: "R2,900",
+  },
+  {
+    name: "Growth Website",
+    price6: "R999",
     price12: "R699",
     period: "/month",
     badge: "",
-    desc: "Perfect for brands just starting out. Customers add to cart and place their order — you get the order via WhatsApp and they receive a PDF with your banking details to pay.",
+    desc: "For businesses that want long-term online visibility. More pages, a blog and advanced SEO to grow your presence every month.",
     features: [
-      "Product catalog (up to 30 products)",
-      "Add to cart & checkout flow",
-      "Order sent to you via WhatsApp",
-      "Auto-generated PDF with banking details sent to customer",
-      "Mobile-first design",
+      "Up to 5 pages (extra pages on request)",
+      "Mobile-friendly design",
+      "WhatsApp button + contact form",
+      "Enquiry forms",
+      "Google Search Console setup",
+      "Advanced SEO setup",
+      "Blog / news section",
+      "Monthly content updates support",
+      "Google Analytics & conversion tracking",
+      "Custom branding & colour scheme",
       "Hosting & security included",
-      "Your own dashboard — manage products & stock yourself",
-      "SEO basics included",
+      "Monthly management & support",
     ],
-    cta: "Get Catalog Store",
+    cta: "Get Growth Website",
     featured: false,
-  },
-  {
-    name: "Full Store",
-    price6: "R1,499",
-    price12: "R1,299",
-    period: "/month",
-    badge: "Most Popular",
-    desc: "A complete online store with payment gateway, admin dashboard and order management — everything your brand needs to sell seriously online.",
-    features: [
-      "Unlimited products",
-      "Payment gateway (PayFast / Ozow / Paystack)",
-      "Admin dashboard & order management",
-      "Inventory tracking",
-      "Discount codes & promotions",
-      "Mobile-first design",
-      "Hosting, security & backups",
-      "SEO & Google Business setup",
-      "Your own admin dashboard — full control over products, stock & orders",
-      "Technical support & uptime monitoring",
-    ],
-    cta: "Get Full Store",
-    featured: true,
-  },
-  {
-    name: "Custom",
-    price6: "Custom",
-    price12: "Custom",
-    period: " quote",
-    badge: "",
-    desc: "For brands with complex needs — large catalogs, multi-vendor, custom integrations, booking systems or unique functionality.",
-    features: [
-      "Custom design & functionality",
-      "Multi-vendor or marketplace",
-      "Advanced integrations & APIs",
-      "Custom dashboards & portals",
-      "Priority support",
-    ],
-    cta: "Request Quote",
-    featured: false,
+    isCustom: false,
+    setup6: "R1,499",
+    savings: "R4,600",
   },
 ];
 
 export function Pricing() {
-  const [term, setTerm] = useState<"6" | "12">("6");
+  const [term, setTerm] = useState<"6" | "12">("12");
 
   return (
     <section id="pricing" className="py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-8 max-w-4xl mx-auto">
-          <div className="flex-1 text-center lg:text-left">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider">Pricing</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-              Your Online Store From R799/month
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              No setup fees. <span className="font-semibold text-foreground">6-month management plan</span> — we build and host your store, you get the dashboard to run it yourself. Save more on a 12-month plan.
-            </p>
-          </div>
-          <div className="hidden lg:block shrink-0">
-            <img
-              src={saleImg}
-              alt="Sale price tags"
-              className="w-40 h-40 object-contain"
-            />
-          </div>
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-sm font-semibold text-accent uppercase tracking-wider">Pricing</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
+            Know Exactly What You Get — and What It Costs
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            One flat monthly fee. No hidden costs. Pick a plan and we handle everything — design, build, hosting and monthly management.
+          </p>
         </div>
 
-        {/* Plan term toggle */}
         <div className="mt-10 flex justify-center">
           <div className="inline-flex rounded-full border border-border bg-card p-1 gap-1">
             <button
@@ -111,17 +113,17 @@ export function Pricing() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              12-month plan
+              Yearly plan
               <span className={`text-xs rounded-full px-2 py-0.5 font-semibold ${
                 term === "12" ? "bg-white/20 text-white" : "bg-accent/10 text-accent"
               }`}>
-                Save 2 months
+                Save more
               </span>
             </button>
           </div>
         </div>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {plans.map((p) => {
             const price = term === "12" ? p.price12 : p.price6;
             return (
@@ -134,20 +136,39 @@ export function Pricing() {
                 }`}
               >
                 {p.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-brand px-3 py-1 text-xs font-semibold text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-brand px-4 py-1 text-xs font-semibold text-white shadow-glow">
                     {p.badge}
                   </span>
                 )}
                 <h3 className="text-lg font-semibold">{p.name}</h3>
-                <div className="mt-4 flex items-baseline gap-0.5">
-                  <span className="text-4xl font-bold tracking-tight">{price}</span>
-                  <span className={`ml-0.5 ${p.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                    {p.period}
-                  </span>
+                <div className="mt-4 flex items-start justify-between gap-2">
+                  <div>
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-4xl font-bold tracking-tight">{price}</span>
+                      <span className={`ml-0.5 ${p.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                        {p.period}
+                      </span>
+                    </div>
+                    <p className={`mt-1 text-xs font-medium ${p.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                      {p.isCustom ? "Setup fee applies · contact for quote" : term === "6" ? "6-month plan" : "Yearly · best value"}
+                    </p>
+                  </div>
+                  {term === "12" && !p.isCustom && (
+                    <span className={`shrink-0 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${p.featured ? "bg-emerald-400/20 text-emerald-300" : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"}`}>
+                      <Tag className="h-3 w-3" /> Save {p.savings}
+                    </span>
+                  )}
                 </div>
-                <p className={`mt-1 text-xs font-medium ${p.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
-                  {term === "6" ? "6-month management plan" : "12-month management plan · best value"}
-                </p>
+                {!p.isCustom && (
+                  <span className={`mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                    p.featured
+                      ? "bg-white/15 text-white"
+                      : "bg-amber-500/10 text-amber-600 dark:text-amber-400"
+                  }`}>
+                    <span className="h-1.5 w-1.5 rounded-full bg-current" />
+                    Once-off setup fee: {term === "12" ? "R499" : p.setup6}
+                  </span>
+                )}
                 <p className={`mt-3 text-sm ${p.featured ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {p.desc}
                 </p>
@@ -159,10 +180,9 @@ export function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={openChat}
                   className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 font-medium transition self-end ${
                     p.featured
                       ? "bg-white text-primary hover:bg-white/90"
@@ -170,15 +190,16 @@ export function Pricing() {
                   }`}
                 >
                   <MessageCircle className="h-4 w-4" /> {p.cta}
-                </a>
+                </button>
               </div>
             );
           })}
         </div>
 
-        <p className="mt-8 text-center text-xs text-muted-foreground">
-          All plans are on a minimum-term management agreement. After your term, your plan continues monthly. Your domain and store content are always yours.
+        <p className="mt-8 text-center text-xs text-muted-foreground max-w-2xl mx-auto">
+          Toggle above to compare 6-month and yearly plans. All plans include a once-off setup fee — R499 on yearly (same for all plans). 6-month setup fees vary by plan. After your minimum term your plan continues monthly. Your domain and content are always yours.
         </p>
+
       </div>
     </section>
   );

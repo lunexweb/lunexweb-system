@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { WHATSAPP_LINK } from "@/lib/site";
+import { openChat } from "@/lib/site";
 
 const links = [
+  { href: "/#top", label: "Home" },
   { href: "/#services", label: "Services" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/online-store", label: "Online Store" },
   { href: "/#portfolio", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Contact" },
@@ -48,14 +50,13 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground px-4 py-2 text-sm font-medium hover:opacity-90 transition"
+            <button
+              type="button"
+              onClick={openChat}
+              className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
+              <MessageCircle className="h-4 w-4" /> Live Chat
+            </button>
             <button
               className={`md:hidden p-2 rounded-lg border transition ${
                 scrolled
@@ -111,15 +112,13 @@ export function Navbar() {
             ))}
           </nav>
 
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 flex items-center justify-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground px-5 py-3.5 font-semibold text-base hover:opacity-90 transition"
-            onClick={() => setOpen(false)}
+          <button
+            type="button"
+            onClick={() => { setOpen(false); openChat(); }}
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3.5 font-semibold text-base hover:opacity-90 transition"
           >
-            <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
-          </a>
+            <MessageCircle className="h-5 w-5" /> Start Live Chat
+          </button>
         </div>
       </div>
     </>

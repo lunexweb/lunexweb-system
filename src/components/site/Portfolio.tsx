@@ -14,8 +14,11 @@ export function Portfolio() {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold text-accent uppercase tracking-wider">Our work</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            Helping Local Businesses Look More Professional Online
+            Real South African Businesses, Managed by LunexWeb
           </h2>
+          <p className="mt-3 text-muted-foreground text-sm">
+            Every site below is live, hosted and maintained on our platform. Click any to visit.
+          </p>
         </div>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (

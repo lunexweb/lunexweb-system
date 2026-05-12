@@ -1,88 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lunexweb-system.vercel.app/</loc>
+    <loc>https://lunexweb.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog</loc>
+    <loc>https://lunexweb.com/online-store</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/monthly-website-vs-once-off-build-south-africa</loc>
+    <loc>https://lunexweb.com/blog/does-your-south-african-business-need-a-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/whats-included-in-monthly-website-plan</loc>
+    <loc>https://lunexweb.com/blog/why-sa-customers-google-your-business-before-calling</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/web-design-johannesburg</loc>
+    <loc>https://lunexweb.com/blog/how-to-get-more-customers-from-your-website-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/web-design-cape-town</loc>
+    <loc>https://lunexweb.com/blog/5-signs-your-sa-business-website-is-hurting-you</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/web-design-pretoria</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lunexweb-system.vercel.app/blog/websites-for-plumbers-south-africa</loc>
+    <loc>https://lunexweb.com/blog/how-to-start-selling-online-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/restaurant-websites-south-africa</loc>
+    <loc>https://lunexweb.com/blog/whatsapp-selling-vs-online-store-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/web-design-durban</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lunexweb-system.vercel.app/blog/web-design-port-elizabeth</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lunexweb-system.vercel.app/blog/websites-for-lawyers-attorneys-south-africa</loc>
+    <loc>https://lunexweb.com/blog/monthly-rental-vs-shopify-woocommerce-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/websites-for-salons-spas-south-africa</loc>
+    <loc>https://lunexweb.com/blog/get-your-online-store-found-on-google-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/websites-for-mechanics-auto-shops-south-africa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lunexweb-system.vercel.app/blog/why-every-sa-business-needs-a-website</loc>
+    <loc>https://lunexweb.com/blog/how-to-sell-clothing-online-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/how-much-does-a-website-cost-in-south-africa</loc>
+    <loc>https://lunexweb.com/blog/how-to-sell-food-products-online-south-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunexweb-system.vercel.app/blog/google-ads-for-small-businesses-south-africa</loc>
+    <loc>https://lunexweb.com/blog/how-to-run-facebook-ads-for-sa-online-store</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/payfast-vs-ozow-vs-peach-payments-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/how-much-does-a-website-cost-in-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/monthly-website-vs-once-off-build-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/whats-included-in-monthly-website-plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/why-every-sa-business-needs-a-website</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/google-ads-for-small-businesses-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/web-design-johannesburg</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/web-design-cape-town</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/web-design-pretoria</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/web-design-durban</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/web-design-port-elizabeth</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/websites-for-plumbers-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/restaurant-websites-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/websites-for-lawyers-attorneys-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/websites-for-salons-spas-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lunexweb.com/blog/websites-for-mechanics-auto-shops-south-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

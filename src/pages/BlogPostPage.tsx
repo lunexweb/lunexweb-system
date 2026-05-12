@@ -3,8 +3,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
-import { WHATSAPP_LINK } from "@/lib/site";
+import { openChat } from "@/lib/site";
 import { blogPosts } from "@/data/blogPosts";
 
 export function BlogPostPage() {
@@ -13,7 +12,7 @@ export function BlogPostPage() {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const url = `https://lunexweb-system.vercel.app/blog/${post.slug}`;
+  const url = `https://lunexweb.com/blog/${post.slug}`;
 
   return (
     <>
@@ -39,7 +38,7 @@ export function BlogPostPage() {
               name: "Lunexweb",
               logo: {
                 "@type": "ImageObject",
-                url: "https://lunexweb-system.vercel.app/portfolio/2.png",
+                url: "https://lunexweb.com/portfolio/2.png",
               },
             },
             mainEntityOfPage: url,
@@ -84,21 +83,19 @@ export function BlogPostPage() {
           <div className="mt-16 rounded-2xl bg-secondary border border-border p-8 text-center">
             <h2 className="text-2xl font-bold tracking-tight">Ready to grow your business online?</h2>
             <p className="mt-2 text-muted-foreground">
-              Get a professional, ads-ready website from R499 setup + R299/month.
+              Get a professionally managed website from R299/month. We build, host and manage everything.
             </p>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground px-6 py-3 font-semibold hover:opacity-90 transition"
+            <button
+              type="button"
+              onClick={openChat}
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-6 py-3 font-semibold hover:opacity-90 transition"
             >
-              <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
-            </a>
+              <MessageCircle className="h-5 w-5" /> Start Live Chat
+            </button>
           </div>
         </article>
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
-import { WHATSAPP_LINK, WHATSAPP_NUMBER, EMAIL } from "@/lib/site";
+import { WHATSAPP_NUMBER, EMAIL, openChat } from "@/lib/site";
 
 export function ContactSection() {
   const formKey = import.meta.env.VITE_FORM_KEY ?? "";
@@ -17,10 +17,10 @@ export function ContactSection() {
             We'll recommend the best setup based on your business goals and budget.
           </p>
           <div className="mt-8 space-y-4 text-sm">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent transition">
-              <span className="h-10 w-10 rounded-lg bg-whatsapp/15 text-whatsapp grid place-items-center"><MessageCircle className="h-5 w-5" /></span>
-              WhatsApp us
-            </a>
+            <button type="button" onClick={openChat} className="flex items-center gap-3 hover:text-accent transition">
+              <span className="h-10 w-10 rounded-lg bg-accent/10 text-accent grid place-items-center"><MessageCircle className="h-5 w-5" /></span>
+              Live Chat
+            </button>
             <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-3 hover:text-accent transition">
               <span className="h-10 w-10 rounded-lg bg-accent/10 text-accent grid place-items-center"><Phone className="h-5 w-5" /></span>
               +27 78 999 2503

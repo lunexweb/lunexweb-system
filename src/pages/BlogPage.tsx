@@ -15,9 +15,9 @@ export function BlogPage() {
           name="description"
           content="Practical web design, SEO, and digital marketing tips for South African businesses. Learn how to grow your business online with Lunexweb."
         />
-        <link rel="canonical" href="https://lunexweb-system.vercel.app/blog" />
+        <link rel="canonical" href="https://lunexweb.com/blog" />
         <meta property="og:title" content="Lunexweb Blog — Web Design & Marketing Tips for SA Businesses" />
-        <meta property="og:url" content="https://lunexweb-system.vercel.app/blog" />
+        <meta property="og:url" content="https://lunexweb.com/blog" />
       </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background text-foreground pt-28 pb-24">
