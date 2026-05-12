@@ -1,23 +1,25 @@
 import { useState } from "react";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone, Send } from "lucide-react";
 import { WHATSAPP_NUMBER, EMAIL } from "@/lib/site";
 
 export function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [result, setResult] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const inputCls = "mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const msg = [
-      `Hi LunexWeb — I'd like to get in touch.`,
-      ``,
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      ``,
-      form.message,
-    ].join("\n");
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+    setResult("sending");
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "59f8028f-b537-4f79-8389-7103202cdf5f");
+    const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+    const data = await res.json();
+    if (data.success) {
+      setResult("success");
+      (e.target as HTMLFormElement).reset();
+    } else {
+      setResult("error");
+    }
   }
 
   return (
@@ -50,22 +52,30 @@ export function ContactSection() {
         <form onSubmit={handleSubmit} className="rounded-2xl bg-card border border-border p-6 shadow-elegant space-y-4">
           <div>
             <label className="text-sm font-medium">Your name</label>
-            <input type="text" required maxLength={100} value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} className={inputCls} />
+            <input type="text" name="name" required maxLength={100} className={inputCls} />
           </div>
           <div>
             <label className="text-sm font-medium">Email</label>
-            <input type="email" required maxLength={255} value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} className={inputCls} />
+            <input type="email" name="email" required maxLength={255} className={inputCls} />
           </div>
           <div>
             <label className="text-sm font-medium">How can we help?</label>
-            <textarea required rows={4} maxLength={1000} value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} className={inputCls} />
+            <textarea name="message" required rows={4} maxLength={1000} className={inputCls} />
           </div>
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3 font-medium shadow-glow hover:opacity-90 transition"
+            disabled={result === "sending"}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3 font-medium shadow-glow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <MessageCircle className="h-4 w-4" /> Send via WhatsApp
+            <Send className="h-4 w-4" />
+            {result === "sending" ? "Sending..." : "Send Message"}
           </button>
+          {result === "success" && (
+            <p className="text-center text-sm text-emerald-500 font-medium">Message sent! We'll be in touch soon.</p>
+          )}
+          {result === "error" && (
+            <p className="text-center text-sm text-red-500 font-medium">Something went wrong. Please try WhatsApp or email.</p>
+          )}
         </form>
       </div>
     </section>

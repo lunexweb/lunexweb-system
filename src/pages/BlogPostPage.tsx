@@ -90,7 +90,7 @@ export function BlogPostPage() {
               onClick={openChat}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-6 py-3 font-semibold hover:opacity-90 transition"
             >
-              <MessageCircle className="h-5 w-5" /> Start Live Chat
+              <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
             </button>
           </div>
         </article>

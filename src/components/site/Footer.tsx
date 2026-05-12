@@ -29,7 +29,7 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/70">
-            <li><button type="button" onClick={openChat} className="hover:text-white transition-colors">Live Chat</button></li>
+            <li><button type="button" onClick={openChat} className="hover:text-white transition-colors">WhatsApp</button></li>
             <li><a href={`mailto:${EMAIL}`} className="hover:text-white">{EMAIL}</a></li>
             <li>Johannesburg, South Africa</li>
           </ul>

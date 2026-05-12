@@ -35,7 +35,7 @@ export function CTA() {
               onClick={openChat}
               className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 font-semibold hover:bg-white/90 transition"
             >
-              <MessageCircle className="h-5 w-5" /> Start Live Chat
+              <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
             </button>
           </div>
         </div>

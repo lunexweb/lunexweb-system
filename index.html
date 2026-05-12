@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
 
-    <!-- Preconnect for third-party origins -->
-    <link rel="preconnect" href="https://embed.tawk.to" crossorigin />
-    <link rel="dns-prefetch" href="https://embed.tawk.to" />
 
     <title>Professional Managed Websites for SA Businesses | LunexWeb — From R299/Month</title>
     <meta name="description" content="Get a professional business website fully managed for you. LunexWeb builds, hosts and maintains your website every month. No setup fees. From R299/month. South Africa." />
@@ -97,20 +94,20 @@
       </div>
     </noscript>
     <script type="module" src="/src/main.tsx"></script>
-    <!--Start of Tawk.to Script (deferred 3s after load for better TTI)-->
-    <script type="text/javascript">
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6a0285d76a19e61c3598552d/1joctlks5';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-      }, 3000);
-    });
-    </script>
-    <!--End of Tawk.to Script-->
+    <!-- WhatsApp floating button -->
+    <style>
+      #wa-float{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;}
+      #wa-float .wa-bubble{background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.45);transition:transform .2s;}
+      #wa-float:hover .wa-bubble{transform:scale(1.08);}
+      #wa-float .wa-label{background:#25D366;color:#fff;font-family:system-ui,sans-serif;font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap;}
+    </style>
+    <a id="wa-float" href="https://wa.me/27789992503" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <span class="wa-label">Chat on WhatsApp</span>
+      <span class="wa-bubble">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#fff" d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.47 1.65 6.35L3 29l6.82-1.62A13 13 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm6.4 17.6c-.27.76-1.58 1.45-2.17 1.54-.56.08-1.27.12-2.04-.13a18.6 18.6 0 0 1-1.85-.68C13.7 20.1 11.8 17.7 11.65 17.5c-.15-.2-1.25-1.66-1.25-3.16s.8-2.24 1.08-2.55c.27-.3.6-.38.8-.38l.57.01c.18 0 .43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.32-.13.62.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.48.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.08.12.08.7-.18 1.47Z"/>
+        </svg>
+      </span>
+    </a>
   </body>
 </html>

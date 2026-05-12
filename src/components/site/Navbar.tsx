@@ -55,7 +55,7 @@ export function Navbar() {
               onClick={openChat}
               className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
             >
-              <MessageCircle className="h-4 w-4" /> Live Chat
+              <MessageCircle className="h-4 w-4" /> WhatsApp
             </button>
             <button
               className={`md:hidden p-2 rounded-lg border transition ${
@@ -117,7 +117,7 @@ export function Navbar() {
             onClick={() => { setOpen(false); openChat(); }}
             className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand text-white px-5 py-3.5 font-semibold text-base hover:opacity-90 transition"
           >
-            <MessageCircle className="h-5 w-5" /> Start Live Chat
+            <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
           </button>
         </div>
       </div>

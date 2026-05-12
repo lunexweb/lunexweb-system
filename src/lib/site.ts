@@ -3,7 +3,5 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
 export const EMAIL = "sales@lunexweb.com";
 
 export function openChat() {
-  if (typeof window !== "undefined" && (window as any).Tawk_API) {
-    (window as any).Tawk_API.maximize();
-  }
+  window.open(WHATSAPP_LINK, "_blank");
 }
