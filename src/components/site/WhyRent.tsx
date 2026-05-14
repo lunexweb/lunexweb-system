@@ -5,12 +5,12 @@ const benefits = [
   {
     icon: Search,
     title: "Get found on Google",
-    desc: "When customers search for your type of business nearby, your website shows up — not just a Facebook page that Google ignores.",
+    desc: "When someone types \"plumber Johannesburg\" or \"hair salon near me\" — your business appears. Google is where buying decisions start. Be there.",
   },
   {
     icon: Building2,
     title: "Look like a serious business",
-    desc: "A professional website builds trust instantly. Customers choose businesses that look credible and established online.",
+    desc: "A strong online presence builds trust instantly. Customers choose businesses that look credible and established — not just a social media page.",
   },
   {
     icon: ShieldCheck,
@@ -19,18 +19,18 @@ const benefits = [
   },
   {
     icon: Smartphone,
-    title: "Mobile-first by default",
-    desc: "Over 80% of SA internet users browse on their phones. Every site we build is designed for mobile from the ground up.",
+    title: "Looks great on every phone",
+    desc: "Most of your customers will see your business on a phone first. Every presence we manage looks sharp, loads fast and works perfectly on mobile.",
   },
   {
     icon: TrendingUp,
     title: "Run ads that actually convert",
-    desc: "Facebook, Instagram and Google ads perform better when they send traffic to a proper website — not just a WhatsApp number.",
+    desc: "Facebook, Instagram and Google ads perform better when they send traffic to a dedicated landing page — not just a WhatsApp number.",
   },
   {
     icon: HeadphonesIcon,
     title: "Managed, not abandoned",
-    desc: "Most businesses get a website built and then left to fend for themselves. We handle hosting, updates and support every month.",
+    desc: "Most businesses get a site built and then left alone. We handle hosting, updates and support every month — always on, always maintained.",
   },
 ];
 
@@ -40,16 +40,17 @@ export function WhyRent() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider">Why Rent a Website</p>
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider">Why Managed Presence</p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-              Stop Losing Customers to Businesses With Better Websites
+              97% of customers search online before they buy.
+              <span className="text-accent"> Be the result they find.</span>
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Customers search Google before they buy. If your business isn't there — a competitor is. Instagram and WhatsApp won't fix that.
+              Google is the first place customers go when they need a service. If your business isn't showing up — someone else is getting that customer. Every day you're invisible is a day of lost revenue.
             </p>
             <div className="mt-6 rounded-2xl bg-secondary border border-border p-6">
               <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">The problem isn't that you don't have a website.</span> It's that you don't have one that's fast, visible and maintained. A managed website solves all three — without you touching a line of code.
+                <span className="font-semibold text-foreground">Being found is only half the battle.</span> You also need to look credible when they land on your page. We handle both — search visibility and a professional presence that turns visitors into enquiries.
               </p>
             </div>
           </div>

@@ -10,6 +10,7 @@ const BlogPage = lazy(() => import("@/pages/BlogPage").then((m) => ({ default: m
 const BlogPostPage = lazy(() => import("@/pages/BlogPostPage").then((m) => ({ default: m.BlogPostPage })));
 const OnlineStorePage = lazy(() => import("@/pages/OnlineStorePage").then((m) => ({ default: m.OnlineStorePage })));
 const TermsPage = lazy(() => import("@/pages/TermsPage").then((m) => ({ default: m.TermsPage })));
+const GetStartedPage = lazy(() => import("@/pages/GetStartedPage").then((m) => ({ default: m.GetStartedPage })));
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/online-store" element={<OnlineStorePage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/get-started" element={<GetStartedPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </Suspense>

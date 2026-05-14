@@ -5,9 +5,9 @@ import {
   HeadphonesIcon, Check, ArrowRight, Shirt, Sparkles, Home, Utensils,
   Users, Wrench, MapPin, Tag,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { openChat } from "@/lib/site";
 
 const perfectFor = [
   { icon: Shirt, label: "Clothing brands" },
@@ -55,16 +55,19 @@ const upgrades = [
 ];
 
 const pricingIncludes = [
-  "Professional online store design & build",
-  "WhatsApp ordering + enquiry system",
-  "PDF invoice with banking details & order summary",
-  "Product catalog setup",
-  "Hosting, security & SSL",
-  "Monthly management & support",
+  "Give customers a professional place to browse and order your products",
+  "Turn product views into WhatsApp orders automatically",
+  "Showcase every product in a clean, searchable catalog",
+  "Customers receive a professional invoice automatically",
+  "Help customers find your store on Google",
+  "Hosting & SSL security included",
+  "Monthly management — fully hands-off for you",
 ];
 
 export function OnlineStorePage() {
   const [term, setTerm] = useState<"6" | "12">("12");
+  const [addDomain, setAddDomain] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -95,7 +98,7 @@ export function OnlineStorePage() {
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <button
                 type="button"
-                onClick={openChat}
+                onClick={() => navigate(`/get-started?plan=store${addDomain ? '&domain=true' : ''}`)}
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-7 py-3.5 font-semibold shadow-glow hover:scale-[1.02] transition"
               >
                 Get Your Store <ArrowRight className="h-4 w-4" />
@@ -255,6 +258,47 @@ export function OnlineStorePage() {
               </p>
             </div>
 
+            {/* Domain question */}
+            <div className="mt-6 max-w-xl mx-auto">
+              <p className="text-center text-sm font-semibold mb-3">Do you have a domain? <span className="text-muted-foreground font-normal">(e.g. www.yourstore.co.za)</span></p>
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setAddDomain(false)}
+                  className={`rounded-xl border p-4 text-sm text-left transition-all ${
+                    !addDomain ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-card hover:border-accent/40"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 font-semibold">
+                    <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                      !addDomain ? "border-accent bg-accent" : "border-border"
+                    }`}>
+                      {!addDomain && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
+                    </div>
+                    Yes, I have one
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">No extra charge</p>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setAddDomain(true)}
+                  className={`rounded-xl border p-4 text-sm text-left transition-all ${
+                    addDomain ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-card hover:border-accent/40"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 font-semibold">
+                    <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                      addDomain ? "border-accent bg-accent" : "border-border"
+                    }`}>
+                      {addDomain && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
+                    </div>
+                    No, add one for me
+                  </div>
+                  <p className="mt-1 text-xs text-accent font-medium">+R39/month</p>
+                </button>
+              </div>
+            </div>
+
             {/* Toggle */}
             <div className="mt-6 flex justify-center">
               <div className="inline-flex rounded-full border border-border bg-card p-1 gap-1">
@@ -279,9 +323,14 @@ export function OnlineStorePage() {
 
             <div className="mt-8 rounded-2xl bg-primary text-primary-foreground p-8">
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl font-bold">{term === "12" ? "R899" : "R1,099"}</span>
+                <span className="text-4xl font-bold">{term === "12" ? (addDomain ? "R938" : "R899") : (addDomain ? "R1,138" : "R1,099")}</span>
                 <span className="text-primary-foreground/70">/month</span>
               </div>
+              {addDomain && (
+                <p className="text-xs text-white/60 font-medium flex items-center gap-1 mb-1">
+                  <Globe className="h-3 w-3" /> incl. domain registration (+R39)
+                </p>
+              )}
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 text-white px-2.5 py-1 text-xs font-semibold mb-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 Once-off setup fee: {term === "12" ? "R899" : "R1,299"}
@@ -303,10 +352,10 @@ export function OnlineStorePage() {
               </ul>
               <button
                 type="button"
-                onClick={openChat}
+                onClick={() => navigate(`/get-started?plan=store${addDomain ? '&domain=true' : ''}`)}
                 className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white text-primary px-5 py-3.5 font-semibold hover:bg-white/90 transition"
               >
-                <MessageCircle className="h-5 w-5" /> Chat to Get a Quote
+                Get Started →
               </button>
             </div>
             <p className="mt-4 text-center text-xs text-muted-foreground">

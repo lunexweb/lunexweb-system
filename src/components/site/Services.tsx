@@ -4,25 +4,28 @@ import { Link } from "react-router-dom";
 const plans = [
   {
     icon: Zap,
-    label: "R299/month",
-    title: "Starter Website",
-    desc: "Get your business online with a clean 1-page website. Customers find you, see what you do, and contact you instantly.",
-    points: ["1-page professional site", "Mobile-friendly design", "WhatsApp button", "Basic SEO & Google Search Console"],
+    label: "R499/month",
+    title: "Online Presence Starter",
+    subtitle: "For businesses getting online for the first time",
+    desc: "Get your business visible online. A clean, professional one-page presence — customers find you, see what you do, and reach you instantly.",
+    points: ["Give customers one professional place to find you online", "Help customers find your business on Google", "Turn visitors into WhatsApp enquiries instantly", "Looks professional on any phone, any time"],
   },
   {
     icon: TrendingUp,
-    label: "R499/month",
-    title: "Business Website",
-    desc: "A full multi-page website that builds trust and drives more enquiries — the choice for most growing SA businesses.",
-    points: ["Up to 5 pages (extra on request)", "Better SEO structure", "Enquiry forms", "Priority support"],
+    label: "R799/month",
+    title: "Online Presence Business",
+    subtitle: "For businesses ready to look established and capture more leads",
+    desc: "Everything your business needs to look professional online. Builds trust, drives enquiries — the right choice for most growing SA businesses.",
+    points: ["Give customers a full, established presence to explore", "Help more customers find your business on Google", "Capture leads even when you're busy or offline", "Turn visitors into enquiries — multiple ways to reach you", "3 content updates per month"],
     highlighted: true,
   },
   {
     icon: BarChart3,
-    label: "R699/month",
-    title: "Growth Website",
-    desc: "A complete website built for long-term visibility — more pages, a blog, and advanced SEO to grow your presence month by month.",
-    points: ["Up to 5 pages (extra on request)", "Blog / news section", "Advanced SEO setup", "Content updates support"],
+    label: "R1,199/month",
+    title: "Business Visibility Growth",
+    subtitle: "For businesses ready to attract more enquiries online",
+    desc: "Built for long-term business visibility. More reach, a blog and advanced SEO to compound your presence every month.",
+    points: ["Build visibility that compounds every month you stay", "Attract more enquiries with advanced Google presence", "Publish content that builds authority in your industry", "Track what's working and keep improving", "5 content updates per month + priority queue"],
   },
 ];
 
@@ -31,9 +34,9 @@ export function Services() {
     <section id="services" className="py-24 bg-secondary">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider">What we offer</p>
+          <p className="text-sm font-semibold text-accent uppercase tracking-wider">Subscription plans</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            A Managed Website for Every Stage of Your Business
+            A Managed Online Presence for Every Stage of Your Business
           </h2>
           <p className="mt-4 text-muted-foreground">
             Whether you're starting small or ready to grow online, we've got a simple plan for you.
@@ -55,6 +58,7 @@ export function Services() {
                 <s.icon className="h-3.5 w-3.5" /> {s.label}
               </div>
               <h3 className="text-lg font-semibold">{s.title}</h3>
+              <p className={`mt-1 text-xs font-medium ${s.highlighted ? "text-white/60" : "text-accent"}`}>{s.subtitle}</p>
               <p className={`mt-2 text-sm ${s.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{s.desc}</p>
               <ul className="mt-4 space-y-1.5 text-sm">
                 {s.points.map((p) => (
@@ -75,7 +79,7 @@ export function Services() {
           </div>
           <div className="flex-1 text-center sm:text-left">
             <p className="font-semibold">Need an Online Store?</p>
-            <p className="mt-1 text-sm text-muted-foreground">Sell products online with a fully managed catalog store. WhatsApp ordering included. From R899/month.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Sell products online with a fully managed store. WhatsApp ordering included. From R1,999/month.</p>
           </div>
           <Link
             to="/online-store"

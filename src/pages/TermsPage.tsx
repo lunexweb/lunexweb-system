@@ -10,14 +10,15 @@ import { WHATSAPP_NUMBER } from "@/lib/site";
 
 async function generateContractPDF(data: {
   name: string; business: string; pkg: string;
-  term: string; paymentDay: string; contact: string;
+  term: string; phone: string; email: string;
+  monthlyBase: string; activationBase: string;
+  monthlyTotal: string; activationTotal: string;
+  domainAddon: boolean;
 }) {
   const { default: jsPDF } = await import("jspdf");
   const doc = new jsPDF("p", "mm", "a4");
   const W = 210, margin = 18, cW = W - margin * 2;
   const date = new Date().toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" });
-  const s = ["th","st","nd","rd"];
-  const ord = (n: number) => { const v = n % 100; return n + (s[(v-20)%10] || s[v] || s[0]); };
 
   const NAVY: [number,number,number]  = [10, 28, 60];
   const BLUE: [number,number,number]  = [37, 99, 235];
@@ -92,11 +93,11 @@ async function generateContractPDF(data: {
   doc.setTextColor(...WHITE);
   doc.setFontSize(15);
   doc.setFont("helvetica", "bold");
-  doc.text("WEBSITE SERVICE AGREEMENT", margin, 37);
+  doc.text("ONLINE PRESENCE SERVICE AGREEMENT", margin, 37);
   doc.setFontSize(7.5);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(180, 200, 235);
-  doc.text("Monthly Website Services — Terms & Conditions", margin, 43);
+  doc.text("Managed Online Presence Services — Terms & Conditions", margin, 43);
 
   y = 56;
 
@@ -127,8 +128,67 @@ async function generateContractPDF(data: {
   };
   row("Full Name", data.name, "Business Name", data.business);
   row("Package", data.pkg, "Contract Term", data.term);
-  row("Payment Date", `${ord(Number(data.paymentDay))} of each month`, "Contact", data.contact);
-  y = cardY + cardH + 10;
+  row("Phone Number", data.phone, "Email", data.email || "—");
+  y = cardY + cardH + 4;
+
+  // ── Pricing Summary Card ──────────────────────────────
+  const pcH = data.domainAddon ? 58 : 46;
+  doc.setFillColor(235, 245, 255);
+  doc.roundedRect(margin, y, cW, pcH, 3, 3, "F");
+  doc.setFillColor(...BLUE);
+  doc.roundedRect(margin, y, cW, 8, 3, 3, "F");
+  doc.rect(margin, y + 4, cW, 4, "F");
+  doc.setTextColor(...WHITE);
+  doc.setFontSize(7.5); doc.setFont("helvetica", "bold");
+  doc.text("SELECTED PLAN SUMMARY", margin + 4, y + 6);
+  y += 12;
+  const pc1 = margin + 4, pc2 = W / 2 + 2;
+
+  // Monthly fee
+  doc.setFont("helvetica", "bold"); doc.setFontSize(6.5); doc.setTextColor(...MID);
+  doc.text("MONTHLY FEE", pc1, y);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(...BLUE);
+  doc.text(data.monthlyTotal + "/mo", pc1, y + 5);
+  if (data.domainAddon) {
+    doc.setFontSize(7); doc.setTextColor(...MID);
+    doc.text(`(${data.monthlyBase} base + R39 domain)`, pc1, y + 10);
+  }
+
+  // Activation fee
+  doc.setFont("helvetica", "bold"); doc.setFontSize(6.5); doc.setTextColor(...MID);
+  doc.text("ACTIVATION FEE (ONCE-OFF)", pc2, y);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(...DARK);
+  doc.text(data.activationTotal, pc2, y + 5);
+  if (data.domainAddon) {
+    doc.setFontSize(7); doc.setTextColor(...MID);
+    doc.text(`(${data.activationBase} setup + R39 domain)`, pc2, y + 10);
+  }
+
+  y += data.domainAddon ? 17 : 10;
+
+  // Domain add-on status (always shown)
+  doc.setDrawColor(200, 215, 240); doc.setLineWidth(0.2);
+  doc.line(pc1, y, W - margin, y);
+  y += 4;
+  doc.setFont("helvetica", "bold"); doc.setFontSize(6.5); doc.setTextColor(...MID);
+  doc.text("DOMAIN ADD-ON", pc1, y);
+  y += 4;
+  if (data.domainAddon) {
+    doc.setFillColor(...BLUE);
+    doc.circle(pc1 + 2, y - 1, 1.5, "F");
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(...BLUE);
+    doc.text("Included — R39/month, registered and managed by LunexWeb", pc1 + 6, y);
+  } else {
+    doc.setFillColor(...MID);
+    doc.circle(pc1 + 2, y - 1, 1.5, "F");
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(...MID);
+    doc.text("Not included — client owns and manages their own domain", pc1 + 6, y);
+  }
+  y += 8;
+
+  doc.setFont("helvetica", "italic"); doc.setFontSize(7.5); doc.setTextColor(...GREEN);
+  doc.text("Monthly billing starts only once your presence is live — not during build.", pc1, y);
+  y += 10;
 
   // ── Section helper ────────────────────────────────────
   const sec = (num: string, title: string, body: string) => {
@@ -150,11 +210,18 @@ async function generateContractPDF(data: {
     y += 5;
   };
 
+  const domainNote = data.domainAddon
+    ? `Domain add-on: Included — R39/month, registered and managed by LunexWeb on behalf of the Client. Domain ownership remains with the Client at all times.`
+    : `Domain add-on: Not selected — the Client owns and manages their own domain. LunexWeb will point and configure the domain as part of the service at no extra charge.`;
   sec("01", "Service Packages",
-    "The Client must select and confirm a package prior to onboarding. Package selection determines the scope of work and monthly billing amount. Packages: Starter — R449/month (6-mo) or R299/month (12-mo), 1-page professional website. Business — R699/month (6-mo) or R499/month (12-mo), up to 5-page website. Growth — R999/month (6-mo) or R699/month (12-mo), up to 5 pages + blog & advanced SEO. Online Store — R1,099/month (6-mo) or R899/month (12-mo), full managed e-commerce store. A once-off setup fee applies to all plans and is confirmed prior to onboarding.");
+    `${data.name}, on behalf of ${data.business}, has confirmed the following package: ${data.pkg}. ` +
+    `Monthly fee: ${data.monthlyTotal}/month. ` +
+    `Activation fee (once-off, due before build begins): ${data.activationTotal}. ` +
+    `${domainNote} ` +
+    `Monthly billing begins only once the online presence is live — not while it is being built.`);
 
   sec("02", "Services Included",
-    "Each package includes the following standard services: website setup and initial design configuration; website hosting and domain pointing; SSL security certificate; Google Search Console and basic SEO setup; WhatsApp and contact form integration; basic maintenance and content updates (within approved scope); uptime monitoring to ensure website availability; and WhatsApp-based support for service-related queries.");
+    "Each package includes the following standard services: online presence setup and initial design configuration; hosting and domain pointing; SSL security certificate; Google Search Console and basic SEO setup; contact form integration; basic maintenance and content updates (within approved scope); uptime monitoring; and WhatsApp-based support for service-related queries.");
 
   sec("03", "Important Terms & Conditions",
     "Only content and design approved by the Client before launch will be used on the website. No changes outside the approved scope will be made without a separate written agreement. LunexWeb is responsible solely for maintaining the website and ensuring correct functionality. Redesigns, additional pages, or work outside the agreed scope will be quoted and charged separately. The Client is responsible for managing their own business content, branding, and operational information.");
@@ -166,7 +233,7 @@ async function generateContractPDF(data: {
     "Monthly payments are due on the Client's preferred payment date, between the 1st and 7th of each month, selected at the time of onboarding. Payment requests are sent via Trailbill.com. The Client will receive a payment request on their chosen date each month. Non-payment will result in the suspension or removal of the website. A reconnection fee of 25% of the monthly package price applies after any suspension due to non-payment. LunexWeb reserves the right to withhold services until all outstanding amounts are settled.");
 
   sec("06", "Domain Ownership",
-    "The Client is responsible for purchasing and renewing their own domain name. LunexWeb will point and configure the domain as part of the service, but does not own or manage Client domain registrations. Domain registration costs are not included in the monthly service fee. All website content and assets remain the property of the Client at all times.");
+    "By default, the Client is responsible for purchasing and renewing their own domain name. LunexWeb will point and configure the domain as part of the service. Optional Domain Add-On (R39/month): where selected, LunexWeb registers and manages the domain on the Client's behalf for the duration of the agreement — ownership remains with the Client at all times. All online presence content and assets remain the property of the Client at all times.");
 
   sec("07", "Upgrades & Downgrades",
     "Upgrades may be requested at any time. The Client pays the difference in monthly fee from the next billing date. No new setup fee applies. Downgrades are permitted at the end of the current minimum term only, with 30 days written notice. Content beyond the new plan's page limit will be archived for 30 days before any removal.");
@@ -223,6 +290,21 @@ async function generateContractPDF(data: {
   a.href = url; a.download = filename; a.click();
   return { url, filename };
 }
+
+const PLAN_PRICES: Record<string, Record<string, { monthly: string; activation: string }>> = {
+  "6 months": {
+    Starter:       { monthly: "R699",   activation: "R699" },
+    Business:      { monthly: "R1,099", activation: "R999" },
+    Growth:        { monthly: "R1,699", activation: "R1,299" },
+    "Online Store":{ monthly: "Custom", activation: "Custom" },
+  },
+  "12 months": {
+    Starter:       { monthly: "R499",   activation: "R499" },
+    Business:      { monthly: "R799",   activation: "R799" },
+    Growth:        { monthly: "R1,199", activation: "R999" },
+    "Online Store":{ monthly: "R1,999", activation: "Custom" },
+  },
+};
 
 const paymentDays = Array.from({ length: 7 }, (_, i) => i + 1);
 
@@ -286,7 +368,7 @@ const inputCls =
 
 export function TermsPage() {
   const [form, setForm] = useState({
-    name: "", business: "", package: "", term: "", paymentDay: "", contact: "", agreed: false,
+    name: "", business: "", package: "", term: "", phone: "", email: "", agreed: false, domain: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [generating, setGenerating] = useState(false);
@@ -303,16 +385,19 @@ export function TermsPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setGenerating(true);
-    const s = ["th","st","nd","rd"];
-    const ord = (n: number) => { const v = n % 100; return n + (s[(v-20)%10] || s[v] || s[0]); };
     try {
       const result = await generateContractPDF({
         name: form.name,
         business: form.business,
-        pkg: form.package,
+        pkg: `${form.package} — ${form.term}`,
         term: form.term,
-        paymentDay: form.paymentDay,
-        contact: form.contact,
+        phone: form.phone,
+        email: form.email,
+        monthlyBase: selectedPricing?.monthly ?? "Custom",
+        activationBase: selectedPricing?.activation ?? "Custom",
+        monthlyTotal: domainExtra || selectedPricing?.monthly || "Custom",
+        activationTotal: activationExtra || (selectedPricing?.activation ?? "Custom"),
+        domainAddon: form.domain,
       });
       if (result) setPdfBlob(result);
     } catch (err) {
@@ -323,10 +408,12 @@ export function TermsPage() {
       ``,
       `Name: ${form.name}`,
       `Business: ${form.business}`,
-      `Package: ${form.package}`,
-      `Term: ${form.term}`,
-      `Preferred payment date: ${ord(Number(form.paymentDay))} of each month`,
-      `Contact: ${form.contact}`,
+      `Package: ${form.package} (${form.term})`,
+      `Monthly fee: ${domainExtra || selectedPricing?.monthly || "Custom"}/month`,
+      `Activation fee: ${activationExtra || (selectedPricing?.activation ?? "Custom")}${form.domain ? " (incl. domain R39)" : ""}`,
+      form.domain ? `Domain add-on: Yes — +R39/month (incl. in activation & monthly)` : `Domain add-on: No — I have my own domain`,
+      `Phone: ${form.phone}`,
+      form.email ? `Email: ${form.email}` : "",
       ``,
       `I confirm I have read and agree to the Terms & Conditions on lunexweb.com/terms.`,
     ].join("\n");
@@ -335,14 +422,26 @@ export function TermsPage() {
     setSubmitted(true);
   }
 
+  const selectedPricing = form.term && form.package ? PLAN_PRICES[form.term]?.[form.package] : null;
+  const addR39 = (price: string) => {
+    const n = parseInt(price.replace(/[R,]/g, ""), 10);
+    return `R${(n + 39).toLocaleString("en-ZA")}`;
+  };
+  const domainExtra = form.domain && selectedPricing && selectedPricing.monthly !== "Custom"
+    ? addR39(selectedPricing.monthly)
+    : selectedPricing?.monthly ?? "";
+  const activationExtra = form.domain && selectedPricing && selectedPricing.activation !== "Custom"
+    ? addR39(selectedPricing.activation)
+    : selectedPricing?.activation ?? "";
+
   const isValid = form.name.trim() && form.business.trim() && form.package &&
-    form.term && form.paymentDay && form.contact.trim() && form.agreed;
+    form.term && form.phone.trim() && form.agreed;
 
   return (
     <>
       <Helmet>
-        <title>Website Service Agreement — LunexWeb</title>
-        <meta name="description" content="Read LunexWeb's Website Service Agreement and Terms & Conditions for monthly managed website plans in South Africa." />
+        <title>Online Presence Service Agreement — LunexWeb</title>
+        <meta name="description" content="Read LunexWeb's Online Presence Service Agreement and Terms & Conditions for monthly managed online presence plans in South Africa." />
         <link rel="canonical" href="https://lunexweb.com/terms" />
       </Helmet>
       <Navbar />
@@ -356,10 +455,10 @@ export function TermsPage() {
               <FileCheck className="h-3.5 w-3.5" /> Legal Document
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary-foreground leading-tight">
-              Website Service<br />Agreement
+              Online Presence<br />Service Agreement
             </h1>
             <p className="mt-5 text-primary-foreground/60 max-w-xl mx-auto leading-relaxed">
-              This agreement is between <span className="text-primary-foreground font-medium">LunexWeb</span> (Service Provider) and the Client for the provision of monthly website services. By proceeding with onboarding, the Client agrees to all terms set out below.
+              This agreement is between <span className="text-primary-foreground font-medium">LunexWeb</span> (Service Provider) and the Client for the provision of managed online presence services. By proceeding with onboarding, the Client agrees to all terms set out below.
             </p>
             <a
               href="#sign"
@@ -394,10 +493,10 @@ export function TermsPage() {
               <p className="mb-5">The Client must select and confirm a package prior to onboarding. Package selection determines the scope of work and monthly billing amount.</p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { name: "Starter", price6: "R449/mo", price12: "R299/mo", desc: "1-page professional website" },
-                  { name: "Business", price6: "R699/mo", price12: "R499/mo", desc: "Up to 5-page website", highlight: true },
-                  { name: "Growth", price6: "R999/mo", price12: "R699/mo", desc: "5 pages + blog & advanced SEO" },
-                  { name: "Online Store", price6: "R1,099/mo", price12: "R899/mo", desc: "Full managed e-commerce store" },
+                  { name: "Starter",      price6: "R699/mo",   price12: "R499/mo",   act6: "R699",   act12: "R499",   desc: "1-page online presence" },
+                  { name: "Business",     price6: "R1,099/mo", price12: "R799/mo",   act6: "R999",   act12: "R799",   desc: "Full multi-page online presence", highlight: true },
+                  { name: "Growth",       price6: "R1,699/mo", price12: "R1,199/mo", act6: "R1,299", act12: "R999",   desc: "Multi-section + blog & advanced SEO" },
+                  { name: "Online Store", price6: "Custom",    price12: "R1,999/mo", act6: "Custom", act12: "Custom", desc: "Full managed e-commerce store" },
                 ].map((p) => (
                   <div
                     key={p.name}
@@ -412,10 +511,13 @@ export function TermsPage() {
                       <span className="text-xs text-muted-foreground">{p.price6} 6-month</span>
                     </div>
                     <div className="text-xs mt-1 text-muted-foreground">{p.desc}</div>
+                    <div className="text-xs mt-1.5 text-muted-foreground/70">
+                      Activation: <span className="font-medium text-foreground">{p.act12}</span> (12-mo) · <span className="font-medium text-foreground">{p.act6}</span> (6-mo)
+                    </div>
                   </div>
                 ))}
               </div>
-              <p className="mt-4 text-xs">A once-off setup fee applies to all plans and is confirmed prior to onboarding.</p>
+              <p className="mt-4 text-xs">Optional domain registration add-on available at <span className="font-semibold">R39/month</span> for clients who need a domain registered and managed on their behalf.</p>
             </SectionCard>
           </div>
 
@@ -498,10 +600,11 @@ export function TermsPage() {
           {/* Section 06 */}
           <div id="s06">
             <SectionCard num="06" icon={Globe} title="Domain Ownership">
-              <p>
-                The Client is responsible for purchasing and renewing their own domain name. LunexWeb will point and configure the domain as part of the service, but does not own or manage Client domain registrations. Domain registration costs are not included in the monthly service fee.{" "}
-                <span className="font-semibold text-foreground">All website content and assets remain the property of the Client at all times.</span>
-              </p>
+              <p className="mb-3">By default, the Client is responsible for purchasing and renewing their own domain name. LunexWeb will point and configure the domain as part of the service.</p>
+              <div className="rounded-xl border border-accent/30 bg-accent/5 p-4 text-xs mb-3">
+                <span className="font-semibold text-accent">Optional Domain Add-On — R39/month:</span> Where selected, LunexWeb registers and manages the domain on the Client's behalf for the duration of the agreement. Domain ownership remains with the Client at all times.
+              </div>
+              <p><span className="font-semibold text-foreground">All online presence content and assets remain the property of the Client at all times.</span></p>
             </SectionCard>
           </div>
 
@@ -619,70 +722,121 @@ export function TermsPage() {
                   </Field>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Contract Term">
-                    <select
-                      name="term"
-                      value={form.term}
-                      onChange={(e) => {
-                        setForm((prev) => ({ ...prev, term: e.target.value, package: "" }));
-                      }}
-                      required
-                      className={inputCls}
-                    >
-                      <option value="">Select a term</option>
-                      <option value="6 months">6 months</option>
-                      <option value="12 months">12 months</option>
-                    </select>
-                  </Field>
-                  <Field label="Package">
-                    <select
-                      name="package"
-                      value={form.package}
-                      onChange={handleChange}
-                      required
-                      disabled={!form.term}
-                      className={inputCls + (!form.term ? " opacity-50 cursor-not-allowed" : "")}
-                    >
-                      <option value="">{form.term ? "Select a package" : "Select a term first"}</option>
-                      {form.term === "6 months" && <>
-                        <optgroup label="── Website Plans ──">
-                          <option value="Starter 6-month (R449/month)">Starter — R449/month</option>
-                          <option value="Business 6-month (R699/month)">Business — R699/month</option>
-                          <option value="Growth 6-month (R999/month)">Growth — R999/month</option>
-                        </optgroup>
-                        <optgroup label="── Online Store ──">
-                          <option value="Online Store 6-month (R1,099/month)">Online Store — R1,099/month</option>
-                        </optgroup>
-                      </>}
-                      {form.term === "12 months" && <>
-                        <optgroup label="── Website Plans ──">
-                          <option value="Starter 12-month (R299/month)">Starter — R299/month</option>
-                          <option value="Business 12-month (R499/month)">Business — R499/month</option>
-                          <option value="Growth 12-month (R699/month)">Growth — R699/month</option>
-                        </optgroup>
-                        <optgroup label="── Online Store ──">
-                          <option value="Online Store 12-month (R899/month)">Online Store — R899/month</option>
-                        </optgroup>
-                      </>}
-                    </select>
-                  </Field>
+                {/* Step 1 — Term */}
+                <div>
+                  <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Step 1 — Choose your contract term</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {(["6 months", "12 months"] as const).map((t) => (
+                      <button
+                        key={t} type="button"
+                        onClick={() => setForm((p) => ({ ...p, term: t, package: "", domain: false }))}
+                        className={`rounded-xl border p-4 text-left transition-all ${
+                          form.term === t ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-background hover:border-accent/40"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                            form.term === t ? "border-accent bg-accent" : "border-border"
+                          }`}>
+                            {form.term === t && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
+                          </div>
+                          <span className="font-semibold text-sm">{t === "12 months" ? "12-Month (Yearly)" : "6-Month"}</span>
+                        </div>
+                        <p className="mt-1 text-xs text-muted-foreground ml-6">{t === "12 months" ? "Best monthly rate" : "Higher monthly rate"}</p>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Preferred Payment Date">
-                    <select name="paymentDay" value={form.paymentDay} onChange={handleChange} required className={inputCls}>
-                      <option value="">Select day (1st – 7th)</option>
-                      {paymentDays.map((d) => (
-                        <option key={d} value={d}>
-                          {d}{[1,21].includes(d) ? "st" : [2,22].includes(d) ? "nd" : [3,23].includes(d) ? "rd" : "th"} of each month
-                        </option>
+                {/* Step 2 — Package (only if term selected) */}
+                {form.term && (
+                  <div>
+                    <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Step 2 — Choose your package</p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {Object.entries(PLAN_PRICES[form.term]).map(([plan, prices]) => (
+                        <button
+                          key={plan} type="button"
+                          onClick={() => setForm((p) => ({ ...p, package: plan }))}
+                          className={`rounded-xl border p-4 text-left transition-all ${
+                            form.package === plan ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-background hover:border-accent/40"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="font-semibold text-sm">{plan}</span>
+                            {plan === "Business" && <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Popular</span>}
+                          </div>
+                          <p className="mt-1 text-base font-bold text-accent">{prices.monthly}<span className="text-xs font-normal text-muted-foreground">/mo</span></p>
+                          <p className="text-xs text-muted-foreground mt-0.5">Activation: <span className="font-medium text-foreground">{prices.activation}</span></p>
+                        </button>
                       ))}
-                    </select>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 3 — Domain add-on (only if package selected) */}
+                {form.package && (
+                  <div>
+                    <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Step 3 — Do you have a domain?</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button type="button" onClick={() => setForm((p) => ({ ...p, domain: false }))}
+                        className={`rounded-xl border p-4 text-left transition-all ${
+                          !form.domain ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-background hover:border-accent/40"
+                        }`}>
+                        <div className="flex items-center gap-2">
+                          <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                            !form.domain ? "border-accent bg-accent" : "border-border"
+                          }`}>{!form.domain && <div className="h-1.5 w-1.5 rounded-full bg-white" />}</div>
+                          <span className="font-semibold text-sm">Yes, I have one</span>
+                        </div>
+                        <p className="mt-1 text-xs text-muted-foreground ml-6">No extra charge</p>
+                      </button>
+                      <button type="button" onClick={() => setForm((p) => ({ ...p, domain: true }))}
+                        className={`rounded-xl border p-4 text-left transition-all ${
+                          form.domain ? "border-accent bg-accent/5 ring-2 ring-accent/20" : "border-border bg-background hover:border-accent/40"
+                        }`}>
+                        <div className="flex items-center gap-2">
+                          <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                            form.domain ? "border-accent bg-accent" : "border-border"
+                          }`}>{form.domain && <div className="h-1.5 w-1.5 rounded-full bg-white" />}</div>
+                          <span className="font-semibold text-sm">No, add one for me</span>
+                        </div>
+                        <p className="mt-1 text-xs text-accent font-medium ml-6">+R39/month</p>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* Price Summary */}
+                {form.package && selectedPricing && (
+                  <div className="rounded-xl border border-accent/30 bg-accent/5 p-4 space-y-2">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">Your plan summary</p>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Plan</span>
+                      <span className="font-semibold">{form.package} · {form.term}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Monthly fee</span>
+                      <span className="font-bold text-foreground">{domainExtra || selectedPricing.monthly}{form.domain && selectedPricing.monthly !== "Custom" ? " (incl. domain)" : ""}/mo</span>
+                    </div>
+                    {form.domain && <div className="flex justify-between text-xs text-muted-foreground"><span>└ Base {selectedPricing.monthly}/mo + Domain R39/mo</span></div>}
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Activation fee (once-off)</span>
+                      <span className="font-semibold">{activationExtra || selectedPricing.activation}{form.domain && selectedPricing.activation !== "Custom" ? " (incl. domain)" : ""}</span>
+                    </div>
+                    <div className="border-t border-accent/20 pt-2 text-xs text-muted-foreground">
+                      Monthly billing starts once your presence goes live — not during build.
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <Field label="Contact Number">
+                    <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="082 000 0000" required className={inputCls} />
                   </Field>
-                  <Field label="WhatsApp / Email">
-                    <input type="text" name="contact" value={form.contact} onChange={handleChange} placeholder="082 000 0000 or you@email.com" required className={inputCls} />
-                  </Field>
+                  <div>
+                    <label className="block text-sm font-medium mb-1.5 text-foreground">Email <span className="text-muted-foreground font-normal text-xs">(optional)</span></label>
+                    <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@email.com" className={inputCls} />
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">

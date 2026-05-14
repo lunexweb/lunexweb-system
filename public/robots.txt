@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /get-started
+Disallow: /get-started?*
+
 Sitemap: https://lunexweb.com/sitemap.xml

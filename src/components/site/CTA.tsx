@@ -17,11 +17,14 @@ export function CTA() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
           <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gradient-brand opacity-20 blur-3xl" />
-          <h2 className="relative text-3xl sm:text-5xl font-bold tracking-tight">
-            Get Your Business Online Today
+          <p className="relative text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">One less thing to worry about</p>
+          <h2 className="relative text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
+            We build it.<br className="hidden sm:block" />
+            We manage it.<br className="hidden sm:block" />
+            <span className="text-gradient-brand">You run your business.</span>
           </h2>
-          <p className="relative mt-5 text-white/80 max-w-2xl mx-auto">
-            R499 once-off setup. Then from R299/month — we build, host, and manage everything for you. <span className="text-white font-semibold">No technical stress. No agency fees.</span>
+          <p className="relative mt-6 text-white/80 max-w-xl mx-auto">
+            R499 to activate. Then from R499/month — your presence is live, maintained and working for you every single month. <span className="text-white font-semibold">No technical stress. No agency fees.</span>
           </p>
           <div className="relative mt-8 flex flex-wrap gap-3 justify-center">
             <a

@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import { openChat } from "@/lib/site";
+import { openChat } from "@/lib/site"; // used in mobile sheet
 
 const links = [
   { href: "/#top", label: "Home" },
-  { href: "/#services", label: "Services" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/online-store", label: "Online Store" },
   { href: "/#portfolio", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Contact" },
 ];
 
+const pricingLinks = [
+  { href: "/#pricing", label: "Website Pricing" },
+  { href: "/online-store#pricing", label: "Online Store Pricing" },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [pricingOpen, setPricingOpen] = useState(false);
+  const pricingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -42,7 +46,38 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            {links.map((l) => (
+            <Link to="/#top" className="hover:text-foreground transition-colors">Home</Link>
+
+            {/* Pricing dropdown */}
+            <div
+              ref={pricingRef}
+              className="relative"
+              onMouseEnter={() => setPricingOpen(true)}
+              onMouseLeave={() => setPricingOpen(false)}
+            >
+              <button className="flex items-center gap-1 hover:text-foreground transition-colors">
+                Pricing <ChevronDown className={`h-3.5 w-3.5 transition-transform ${pricingOpen ? "rotate-180" : ""}`} />
+              </button>
+              {pricingOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-52 pt-2 z-50">
+                  <div className="rounded-xl border border-border bg-card shadow-elegant py-1.5">
+                    {pricingLinks.map((l) => (
+                      <Link
+                        key={l.href}
+                        to={l.href}
+                        className="block px-4 py-2.5 text-sm hover:bg-accent/5 hover:text-accent transition-colors"
+                        onClick={() => setPricingOpen(false)}
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link to="/online-store" className="hover:text-foreground transition-colors">Online Store</Link>
+            {links.slice(1).map((l) => (
               <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
                 {l.label}
               </Link>
@@ -50,13 +85,12 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={openChat}
+            <Link
+              to="/get-started"
               className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-brand text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </button>
+              Get Started
+            </Link>
             <button
               className={`md:hidden p-2 rounded-lg border transition ${
                 scrolled
@@ -100,13 +134,18 @@ export function Navbar() {
           </button>
 
           <nav className="flex flex-col gap-1">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="flex items-center py-4 text-base font-medium border-b border-border/50 last:border-0 hover:text-accent transition-colors"
-                onClick={() => setOpen(false)}
-              >
+            <Link to="/#top" className="flex items-center py-4 text-base font-medium border-b border-border/50 hover:text-accent transition-colors" onClick={() => setOpen(false)}>Home</Link>
+            <div>
+              <p className="py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Pricing</p>
+              {pricingLinks.map((l) => (
+                <Link key={l.href} to={l.href} className="flex items-center py-3 pl-3 text-base font-medium border-b border-border/30 hover:text-accent transition-colors" onClick={() => setOpen(false)}>
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+            <Link to="/online-store" className="flex items-center py-4 text-base font-medium border-b border-border/50 hover:text-accent transition-colors" onClick={() => setOpen(false)}>Online Store</Link>
+            {links.slice(1).map((l) => (
+              <Link key={l.href} to={l.href} className="flex items-center py-4 text-base font-medium border-b border-border/50 last:border-0 hover:text-accent transition-colors" onClick={() => setOpen(false)}>
                 {l.label}
               </Link>
             ))}

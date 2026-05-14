@@ -5,25 +5,25 @@ const pillars = [
     icon: Eye,
     number: "01",
     title: "A landing page that actually converts",
-    desc: "Slow, cluttered websites lose visitors before they read your offer. We build clean, fast-loading pages designed to move visitors from 'just browsing' to messaging you.",
+    desc: "Slow, cluttered pages lose visitors before they read your offer. Every presence in the system is built clean and fast-loading — designed to move visitors from 'just browsing' to messaging you.",
   },
   {
     icon: MessageCircle,
     number: "02",
     title: "WhatsApp & contact on every page",
-    desc: "We place a prominent WhatsApp button, click-to-call, and enquiry form exactly where customers look — so no interested visitor leaves without a way to reach you.",
+    desc: "Every plan includes a prominent WhatsApp button, click-to-call and enquiry form placed exactly where customers look — so no interested visitor leaves without a way to reach you.",
   },
   {
     icon: BadgeCheck,
     number: "03",
     title: "Your offer, clear within seconds",
-    desc: "Confusion kills conversions. Visitors need to instantly understand what you sell, who it's for, and how to start. We write and design your site with that clarity built in.",
+    desc: "Confusion kills conversions. Visitors need to instantly understand what you sell, who it's for and how to start. Setup includes writing and designing your presence with that clarity built in from day one.",
   },
   {
     icon: Zap,
     number: "04",
     title: "Fast build & launch",
-    desc: "Most agencies take 4–8 weeks. We move fast — your site is built and launched shortly after we receive your details, so you start getting found on Google right away.",
+    desc: "Most agencies take 4–8 weeks. Once you submit your details, your presence is built and launched — typically within 24–48 hours, so you start getting found on Google right away.",
   },
 ];
 
@@ -34,10 +34,10 @@ export function ConversionSystem() {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold text-accent uppercase tracking-wider">What makes it work</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            4 Things That Make a Website Actually Bring You Customers
+            4 Things That Make Your Online Presence Actually Bring You Customers
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Most SA business websites fail at one or more of these. Every LunexWeb site is built with all four from day one.
+            Most SA businesses miss one or more of these. Every LunexWeb presence is built with all four from day one.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export function ConversionSystem() {
 
         <div className="mt-10 rounded-2xl bg-secondary border border-border p-6 text-center">
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-            <span className="font-semibold text-foreground">Most businesses overthink it.</span> A fast website, a clear offer, and a WhatsApp button customers can actually find — that's what turns visitors into enquiries. We handle all of it for you.
+            <span className="font-semibold text-foreground">Most businesses overthink it.</span> A fast, clean presence, a clear offer, and a WhatsApp button customers can actually find — that's what turns visitors into enquiries. All of it is included in your plan.
           </p>
         </div>
       </div>

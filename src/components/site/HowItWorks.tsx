@@ -1,20 +1,25 @@
-import { LayoutDashboard, MessageCircle, Rocket } from "lucide-react";
+import { LayoutDashboard, MessageCircle, Rocket, TrendingUp } from "lucide-react";
 
 const steps = [
   {
     icon: LayoutDashboard,
-    title: "Choose your package",
-    description: "Pick a website plan that fits your business. Not sure which? We'll recommend the right one.",
+    title: "Choose your plan",
+    description: "Pick a presence plan that fits your business. Not sure which? We'll recommend the right one.",
   },
   {
     icon: MessageCircle,
-    title: "Send your details",
-    description: "We'll guide you — business info, logo, services, photos. No technical skills needed from you.",
+    title: "Submit your business details",
+    description: "Fill in your business info, services, photos and logo. No technical skills needed — your plan handles the rest.",
   },
   {
     icon: Rocket,
-    title: "We build & manage it",
-    description: "Your website goes live within 24–48 hours of us receiving your details. We handle updates, hosting and support every month after that.",
+    title: "We activate & launch",
+    description: "Your presence goes live within 24–48 hours. Monthly management only starts once you're live — not while you wait.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Your presence compounds",
+    description: "Every month we update, monitor and optimise. Your Google ranking builds. Customers find you more. The longer you stay, the stronger your presence gets.",
   },
 ];
 
@@ -25,14 +30,14 @@ export function HowItWorks() {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold text-accent uppercase tracking-wider">How It Works</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-            Your Website Live in 3 Simple Steps
+            How It Works — and How It Keeps Working
           </h2>
           <p className="mt-4 text-muted-foreground">
             No tech skills. No stress. We handle everything.
           </p>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {steps.map((s, i) => (
             <div
               key={s.title}

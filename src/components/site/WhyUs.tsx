@@ -2,11 +2,11 @@ import { Rocket, MapPin, MessageCircle, ArrowUpRight, HeadphonesIcon } from "luc
 import shoppingImg from "@/assets/simonrtr120-shopping-10235472_1920.jpg";
 
 const items = [
-  { icon: Rocket, title: "We move fast", desc: "Most websites are built and launched quickly after we receive your details. No drawn-out agency timelines." },
+  { icon: Rocket, title: "We move fast", desc: "Your online presence is live quickly after we receive your details. No drawn-out agency timelines." },
   { icon: MapPin, title: "Built for South Africa", desc: "A local team that understands SA customers, SA payment needs and what it takes to grow a business here." },
   { icon: MessageCircle, title: "WhatsApp-first support", desc: "Direct line for anything — questions, updates, changes. You always have someone to message." },
   { icon: ArrowUpRight, title: "Upgrade anytime", desc: "Start on Starter and move to Business or Growth when you're ready. No rebuilding. No extra setup fees." },
-  { icon: HeadphonesIcon, title: "No technical stress", desc: "Hosting, security, updates — all handled. You never have to think about your website. We do that." },
+  { icon: HeadphonesIcon, title: "No technical stress", desc: "Hosting, security, updates — all handled. You never have to think about it. We do that." },
 ];
 
 export function WhyUs() {
@@ -20,7 +20,7 @@ export function WhyUs() {
               Why SA Businesses Choose LunexWeb
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We believe every South African business deserves a professional online presence — without paying agency prices or learning how to build websites. We handle everything so you can focus on what you do best.
+              Every South African business deserves a professional online presence — without paying agency prices or figuring it all out yourself. We handle everything so you can focus on what you do best.
             </p>
             <p className="mt-3 text-sm text-muted-foreground/70">
               Built on a growing network of web professionals across South Africa.
