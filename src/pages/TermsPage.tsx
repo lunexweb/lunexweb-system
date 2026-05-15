@@ -293,16 +293,16 @@ async function generateContractPDF(data: {
 
 const PLAN_PRICES: Record<string, Record<string, { monthly: string; activation: string }>> = {
   "6 months": {
-    Starter:       { monthly: "R699",   activation: "R699" },
-    Business:      { monthly: "R1,099", activation: "R999" },
-    Growth:        { monthly: "R1,699", activation: "R1,299" },
-    "Online Store":{ monthly: "Custom", activation: "Custom" },
+    Starter:       { monthly: "R449",   activation: "R449" },
+    Business:      { monthly: "R699",   activation: "R699" },
+    Growth:        { monthly: "R999",   activation: "R999" },
+    "Online Store":{ monthly: "R999",   activation: "R999" },
   },
   "12 months": {
-    Starter:       { monthly: "R499",   activation: "R499" },
-    Business:      { monthly: "R799",   activation: "R799" },
-    Growth:        { monthly: "R1,199", activation: "R999" },
-    "Online Store":{ monthly: "R1,999", activation: "Custom" },
+    Starter:       { monthly: "R299",   activation: "R299" },
+    Business:      { monthly: "R499",   activation: "R499" },
+    Growth:        { monthly: "R699",   activation: "R699" },
+    "Online Store":{ monthly: "R699",   activation: "R699" },
   },
 };
 
@@ -493,10 +493,10 @@ export function TermsPage() {
               <p className="mb-5">The Client must select and confirm a package prior to onboarding. Package selection determines the scope of work and monthly billing amount.</p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { name: "Starter",      price6: "R699/mo",   price12: "R499/mo",   act6: "R699",   act12: "R499",   desc: "1-page online presence" },
-                  { name: "Business",     price6: "R1,099/mo", price12: "R799/mo",   act6: "R999",   act12: "R799",   desc: "Full multi-page online presence", highlight: true },
-                  { name: "Growth",       price6: "R1,699/mo", price12: "R1,199/mo", act6: "R1,299", act12: "R999",   desc: "Multi-section + blog & advanced SEO" },
-                  { name: "Online Store", price6: "Custom",    price12: "R1,999/mo", act6: "Custom", act12: "Custom", desc: "Full managed e-commerce store" },
+                  { name: "Starter",      price6: "R449/mo",  price12: "R299/mo",  act6: "R449",   act12: "R299",  desc: "1-page online presence" },
+                  { name: "Business",     price6: "R699/mo",  price12: "R499/mo",  act6: "R699",   act12: "R499",  desc: "Full multi-page online presence", highlight: true },
+                  { name: "Growth",       price6: "R999/mo",  price12: "R699/mo",  act6: "R999",   act12: "R699",  desc: "Multi-section + blog & advanced SEO" },
+                  { name: "Online Store", price6: "R999/mo",  price12: "R699/mo",  act6: "R999",   act12: "R699",  desc: "Full managed e-commerce store" },
                 ].map((p) => (
                   <div
                     key={p.name}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const plans = [
   {
     icon: Zap,
-    label: "R499/month",
+    label: "R299/month",
     title: "Online Presence Starter",
     subtitle: "For businesses getting online for the first time",
     desc: "Get your business visible online. A clean, professional one-page presence — customers find you, see what you do, and reach you instantly.",
@@ -12,7 +12,7 @@ const plans = [
   },
   {
     icon: TrendingUp,
-    label: "R799/month",
+    label: "R499/month",
     title: "Online Presence Business",
     subtitle: "For businesses ready to look established and capture more leads",
     desc: "Everything your business needs to look professional online. Builds trust, drives enquiries — the right choice for most growing SA businesses.",
@@ -21,7 +21,7 @@ const plans = [
   },
   {
     icon: BarChart3,
-    label: "R1,199/month",
+    label: "R699/month",
     title: "Business Visibility Growth",
     subtitle: "For businesses ready to attract more enquiries online",
     desc: "Built for long-term business visibility. More reach, a blog and advanced SEO to compound your presence every month.",
@@ -79,7 +79,7 @@ export function Services() {
           </div>
           <div className="flex-1 text-center sm:text-left">
             <p className="font-semibold">Need an Online Store?</p>
-            <p className="mt-1 text-sm text-muted-foreground">Sell products online with a fully managed store. WhatsApp ordering included. From R1,999/month.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Sell products online with a fully managed store. WhatsApp ordering included. From R699/month.</p>
           </div>
           <Link
             to="/online-store"

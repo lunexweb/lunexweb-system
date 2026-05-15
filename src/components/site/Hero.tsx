@@ -10,7 +10,7 @@ export function Hero() {
         <div className="animate-fade-in-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-white/80 backdrop-blur">
             <Building2 className="h-3 w-3 text-brand-glow" />
-            Managed Online Presence · South Africa · From R499/month
+            Managed Online Presence · South Africa · From R299/month
           </span>
 
           <h1 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight">
@@ -57,9 +57,9 @@ export function Hero() {
             <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">Choose your level</p>
             <div className="space-y-1">
               {[
-                { plan: "Starter",  price: "R499/mo", outcome: "Get found online" },
-                { plan: "Business", price: "R799/mo", outcome: "Look established and trusted", highlight: true },
-                { plan: "Growth",   price: "R1,199/mo", outcome: "Become the go-to choice in your area" },
+                { plan: "Starter",  price: "R299/mo", outcome: "Get found online" },
+                { plan: "Business", price: "R499/mo", outcome: "Look established and trusted", highlight: true },
+                { plan: "Growth",   price: "R699/mo", outcome: "Become the go-to choice in your area" },
               ].map((p) => (
                 <div key={p.plan} className={`flex items-center justify-between rounded-lg px-3 py-1.5 text-xs ${
                   p.highlight ? "bg-white/10 text-white" : "text-white/60"
@@ -71,7 +71,7 @@ export function Hero() {
                 </div>
               ))}
             </div>
-            <p className="mt-2 text-xs text-white/40">Activation from R499 · Live in 24–48 hours · Monthly starts when you go live</p>
+            <p className="mt-2 text-xs text-white/40">Activation from R299 · Live in 24–48 hours · Monthly starts when you go live</p>
           </div>
 
           <div className="mt-4 grid grid-cols-3 gap-2 max-w-lg">
@@ -87,7 +87,7 @@ export function Hero() {
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-center backdrop-blur">
               <Banknote className="h-4 w-4 text-brand-glow mx-auto mb-1" />
-              <p className="text-xs font-semibold text-white">From R499/mo</p>
+              <p className="text-xs font-semibold text-white">From R299/mo</p>
               <p className="text-xs text-brand-glow mt-0.5 font-medium">Monthly starts once live</p>
             </div>
           </div>

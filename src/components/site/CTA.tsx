@@ -24,7 +24,7 @@ export function CTA() {
             <span className="text-gradient-brand">You run your business.</span>
           </h2>
           <p className="relative mt-6 text-white/80 max-w-xl mx-auto">
-            R499 to activate. Then from R499/month — your presence is live, maintained and working for you every single month. <span className="text-white font-semibold">No technical stress. No agency fees.</span>
+            R299 to activate. Then from R299/month — your presence is live, maintained and working for you every single month. <span className="text-white font-semibold">No technical stress. No agency fees.</span>
           </p>
           <div className="relative mt-8 flex flex-wrap gap-3 justify-center">
             <a

@@ -72,10 +72,10 @@ export function OnlineStorePage() {
   return (
     <>
       <Helmet>
-        <title>Managed Online Store for SA Businesses | LunexWeb — From R899/Month</title>
+        <title>Managed Online Store for SA Businesses | LunexWeb — From R699/Month</title>
         <meta
           name="description"
-          content="Get a professional online store built and managed for you. WhatsApp ordering, product catalog, SEO setup. No technical setup needed. From R899/month. South Africa."
+          content="Get a professional online store built and managed for you. WhatsApp ordering, product catalog, SEO setup. No technical setup needed. From R699/month. South Africa."
         />
       </Helmet>
       <div className="min-h-screen bg-background text-foreground">
@@ -86,7 +86,7 @@ export function OnlineStorePage() {
           <div className="mx-auto max-w-4xl px-6 text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-3 py-1 text-xs font-semibold text-whatsapp backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-whatsapp animate-pulse" />
-              Managed Online Store · South Africa · From R899/Month
+              Managed Online Store · South Africa · From R699/Month
             </span>
             <h1 className="mt-4 text-3xl sm:text-5xl font-bold leading-tight tracking-tight">
               Sell Online Without the{" "}

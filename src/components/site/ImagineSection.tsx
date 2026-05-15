@@ -94,7 +94,7 @@ export function ImagineSection() {
               They book. <span className="font-semibold text-accent">You get paid.</span>
             </p>
             <p className="pt-2 text-sm text-muted-foreground">
-              That one link costs you R499 once — then R499 a month. A single booking covers it.
+              That one link costs you R299 once — then R299 a month. A single booking covers it.
             </p>
           </div>
         </div>
@@ -110,7 +110,7 @@ export function ImagineSection() {
             ["You explain your prices every single time", "Prices are on your site — always up to date"],
             ["You look like you're just starting out", "You look like an established, trusted business"],
             ["Site breaks at 8pm — no one to call", "We manage it. We fix it. You don't even notice."],
-            ["Pay R15k upfront before you earn a cent", "R499 once. Then from R499/month while you grow."],
+            ["Pay R15k upfront before you earn a cent", "R299 once. Then from R299/month while you grow."],
           ].map(([before, after], i) => (
             <div
               key={i}

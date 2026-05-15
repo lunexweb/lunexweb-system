@@ -93,7 +93,7 @@ export function OnlineStoreSection({ addDomain }: { addDomain: boolean }) {
               <div className="mt-4 flex items-start justify-between gap-2">
                 <div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-5xl font-bold tracking-tight">{term === "12" ? (addDomain ? "R2,038" : "R1,999") : (addDomain ? "R2,838" : "R2,799")}</span>
+                    <span className="text-5xl font-bold tracking-tight">{term === "12" ? (addDomain ? "R738" : "R699") : (addDomain ? "R1,038" : "R999")}</span>
                     <span className="text-muted-foreground">/month</span>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
@@ -107,7 +107,7 @@ export function OnlineStoreSection({ addDomain }: { addDomain: boolean }) {
                 </div>
                 {term === "12" && (
                   <span className="shrink-0 inline-flex items-center gap-1 rounded-full bg-emerald-500/10 text-emerald-600 px-2.5 py-1 text-xs font-semibold">
-                    <Tag className="h-3 w-3" /> Save R9,600/yr
+                    <Tag className="h-3 w-3" /> Save R3,600/yr
                   </span>
                 )}
               </div>

@@ -13,10 +13,10 @@ function withDomain(price: string): string {
 }
 
 const PLANS = [
-  { id: "starter",  name: "Online Presence Starter",    price12: "R499",   price6: "R699",   setup12: "R499",  setup6: "R699",   desc: "One-page presence — get found online fast." },
-  { id: "business", name: "Online Presence Business",   price12: "R799",   price6: "R1,099", setup12: "R799",  setup6: "R999",   desc: "Full multi-page presence — most popular.", popular: true },
-  { id: "growth",   name: "Business Visibility Growth", price12: "R1,199", price6: "R1,699", setup12: "R999",  setup6: "R1,299", desc: "Multi-section + blog — long-term visibility." },
-  { id: "store",    name: "Online Store",               price12: "R1,999", price6: "R1,999", setup12: "Custom", setup6: "Custom", desc: "Full managed online store — WhatsApp ordering & product catalog." },
+  { id: "starter",  name: "Online Presence Starter",    price12: "R299",  price6: "R449",  setup12: "R299", setup6: "R449",  desc: "One-page presence — get found online fast." },
+  { id: "business", name: "Online Presence Business",   price12: "R499",  price6: "R699",  setup12: "R499", setup6: "R699",  desc: "Full multi-page presence — most popular.", popular: true },
+  { id: "growth",   name: "Business Visibility Growth", price12: "R699",  price6: "R999",  setup12: "R699", setup6: "R999",  desc: "Multi-section + blog — long-term visibility." },
+  { id: "store",    name: "Online Store",               price12: "R699",   price6: "R999",  setup12: "R699",  setup6: "R999",  desc: "Full managed online store — WhatsApp ordering & product catalog." },
 ];
 
 const INDUSTRIES = [
